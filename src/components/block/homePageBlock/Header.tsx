@@ -21,7 +21,10 @@ const Header = () => {
   return (
     <div>
 
-        <Head bg={scroll ? "white" : "transparent"} style={{transition:"all 350ms ease-in-out"}} >
+        <Head 
+            bg={scroll ? "white" : "transparent"} 
+            bs={scroll ? "0 0 2px gray" : "null" }
+            style={{transition:"all 350ms ease-in-out"}} >
 
             <HeadHold>
 
@@ -140,11 +143,11 @@ justify-content: space-between;
 align-items: center;
 `;
 
-const Head = styled.div<{bg: string}>`
+const Head = styled.div<{bg: string, bs: string}>`
 width: 100%;
 height: 75px;
 z-index: 50;
-// box-shadow: 0 0 2px gray;
+box-shadow: ${(props) => props.bs };
 display: flex;
 justify-content: center;
 align-items: center;

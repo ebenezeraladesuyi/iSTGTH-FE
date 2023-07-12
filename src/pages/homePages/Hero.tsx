@@ -44,7 +44,7 @@ const Hero = () => {
           
           <Life>Life is too short.. Give when you can..</Life>
 
-          <Button>Join us Today</Button>
+          <Button>Become A Partner</Button>
 
           </HerroLeft>
 
@@ -179,9 +179,8 @@ const Black = styled.div`
 position: absolute;
 width: 100%;
 height: 100%;
-// background-color: black;
-background-image: linear-gradient(45deg, #000000, #171414 );
-opacity: 0.7;
+background-image: linear-gradient(45deg, #000000, #332e2e );
+opacity: 0.5;
 left: 0;
 top: 0;
 `;

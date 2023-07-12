@@ -12,7 +12,7 @@ font-family: 'Roboto', sans-serif;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-  color: rgb(234, 173, 60);
+  color: #332e2e;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);

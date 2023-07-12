@@ -1,10 +1,14 @@
 // import React from 'react'
 
-// import { Card } from "../../components"
+// import { NewsCard } from "../../components"
+import Contact from "./Contact"
+import Donate from "./Donate"
 import Hero from "./Hero"
 import Involved from "./Involved"
+import News from "./News"
 import Projects from "./Projects"
 import Record from "./Record"
+
 
 const HomeComp = () => {
   return (
@@ -14,6 +18,9 @@ const HomeComp = () => {
       <Involved />
       <Projects />
       <Record />
+      <News />
+      <Donate />
+      <Contact />
 
     </div>
   )

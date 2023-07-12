@@ -102,7 +102,7 @@ color: white;
 const Rec = styled.div`
 width: 100%;
 min-height: 40vh;
-background-image: linear-gradient(120deg, #000000, #0000aa);
+background-image: linear-gradient(120deg, #000000, #1c15e7);
 display: flex;
 justify-content: center;
 align-items: center;

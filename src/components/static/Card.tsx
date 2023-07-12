@@ -80,4 +80,5 @@ flex-direction: column;
 justify-content: space-between;
 align-items: center;
 overflow: hidden;
+margin-left: 15px;
 `;
