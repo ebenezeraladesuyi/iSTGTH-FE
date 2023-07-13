@@ -250,17 +250,6 @@ align-items: center;
 }
 `;
 
-// const SignCover3 = styled.div`
-// width: 100%;
-// height: 100%;
-// // top: 0;
-// // left: 0;
-// background-color: black;
-// opacity: 0.6;
-// position: absolute;
-// z-index: -20;
-// `;
-
 const SignCover2 = styled.div`
 width: 100%;
 height: 100%;
