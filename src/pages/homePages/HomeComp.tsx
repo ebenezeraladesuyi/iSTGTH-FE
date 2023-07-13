@@ -3,6 +3,7 @@
 // import { NewsCard } from "../../components"
 import Contact from "./Contact"
 import Donate from "./Donate"
+import Footer from "./Footer"
 import Hero from "./Hero"
 import Involved from "./Involved"
 import News from "./News"
@@ -21,6 +22,7 @@ const HomeComp = () => {
       <News />
       <Donate />
       <Contact />
+      <Footer />
 
     </div>
   )

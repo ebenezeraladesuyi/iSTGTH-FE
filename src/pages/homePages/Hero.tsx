@@ -136,17 +136,17 @@ export default Hero;
 const Button = styled.button`
 padding: 15px 25px;
 font-weight: 700;
-border-radius: 7px;
+border-radius: 25px;
 margin-top: 30px;
-// background: #1A395B;
-background: #1c15e7;
+background: transparent;
 color: white;
 cursor: pointer;
-border: none;
+border: 1px solid #e5e1e1fb;
 
 &:hover{
   // background: #297841;
-  background:  rgb(234, 173, 60);
+  background:  #1c15e7;
+  border: none;
 }
 `;
 
