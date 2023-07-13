@@ -2,10 +2,25 @@
 
 import { styled } from "styled-components";
 import signupImg from "../../assets/Jpegs/p1000-4.jpg"
-// import logo3 from "../../assets/Jpegs/optiLogo.jpg"
+import avatar from "../../assets/Jpegs/avatar.jpg"
+import { BsCamera } from "react-icons/bs";
+import { useState } from "react";
 
 
 const Signup = () => {
+
+    const [myAvatar, setMyAvatar] = useState(avatar)
+    const [image, setImage] = useState("")
+
+    const imgUpload = (e : any) => {
+        const file = e.target.files[0];
+        const save = URL.createObjectURL(file);
+        image
+        setImage(file);
+        setMyAvatar(save);
+    }
+
+
   return (
     <div>
 
@@ -13,14 +28,51 @@ const Signup = () => {
 
                 <SignupLeft>
                     <SignCover></SignCover>
+                   
+                    <Our>
 
-                    {/* <Our>
-
-                        <Hand>
-                            Our Goal is to be that Helping Hand
-                        </Hand>
+                        <Han>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                        </Han>
+                        <Han>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                        </Han>
+                        <Han>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                        </Han>
+                        <Han>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                        </Han>
+                        <Han>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                            <Hand></Hand>
+                        </Han>
                         
-                    </Our> */}
+                    </Our>
                 </SignupLeft>
 
                 
@@ -34,7 +86,14 @@ const Signup = () => {
                         {/* <Up>Become a Member</Up> */}
 
                         <ImageHold>
-                            <SignupImage />
+                            <SignupImage src={myAvatar} id="img" />
+
+                            <input type="file" id="input" style={{display:"none"}} onChange={imgUpload} />
+
+                            <Upload htmlFor="input" >
+                                <BsCamera style={{ fontSize: "18px" }} />
+                                Upload
+                            </Upload>
                         </ImageHold>
 
                         <FullName placeholder="FullName" />
@@ -69,17 +128,51 @@ export default Signup;
 
 // const Foot = styled.div``;
 
-// const Foot = styled.div``;
+const Upload = styled.label`
+position: absolute;
+padding: 7px 14px;
+background: #1c15e7;
+color: white;
+border: none;
+border-radius: 5px;
+right: -50px;
+bottom: -20px;
+cursor: pointer;
 
-// const Hand = styled.div`
-// color: white;
-// font-size: 30px;
-// z-index: 100;
-// `;
+&:hover{
+    background: orange;
+    // border: 1px solid #1c15e7;
+    // color: #1c15e7;
+}
+`;
 
-// const Our = styled.div`
+const Han = styled.div`
+display: flex;
+gap: 8px;
+margin-bottom: 10px;
+`;
+
+const Hand = styled.div`
+background: white;
+height: 10px;
+width: 10px;
+border-radius: 50%;
+`;
+
+const Our = styled.div`
+position: absolute;
+left: 70px;
+top: 50px;
 // z-index: 100;
-// `;
+animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+`;
 
 const Signupp = styled.button`
 width: 93%;
@@ -96,6 +189,17 @@ padding: 7px;
     background: transparent;
     border: 1px solid #1c15e7;
     color: #1c15e7;
+}
+
+animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
 }
 `;
 
@@ -120,10 +224,11 @@ const ImageHold = styled.div`
 width: 110px;
 height: 110px;
 border-radius: 50%;
-border: 1px solid #1c15e7;
+border: 2px solid #1c15e7;
 display: flex;
 justify-content: center;
 align-items: center;
+position: relative;
 `;
 
 // const Up = styled.div`
@@ -182,7 +287,7 @@ position: absolute;
 
 const SignupLeft = styled.div`
 width: 50%;
-height: 100%;
+height: 105vh;
 background-image: url(${signupImg});
 background-size: cover;
 background-position: center;
@@ -191,7 +296,7 @@ position: relative;
 
 const Sign = styled.div`
 width: 100%;
-height: 100vh;
+min-height: 105vh;
 display: flex;
 justify-content: space-between;
 align-items: center;

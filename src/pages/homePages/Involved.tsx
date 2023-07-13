@@ -20,7 +20,8 @@ const Involved = () => {
                 <InvRight>
                     <Stand>iStandToGiveToHumanity</Stand>
 
-                    <Goal>Our Goal is to be that Helping Hand
+                    <Goal>
+                        Our Goal is to be that Helping Hand
                     </Goal>
 
                     <Goals>Our gaol is aim at tackling specific social, economic, environmental, or humanitarian issues. One of our primary goal is to make a positive impact on these issues and bring about meaningful change in society.
