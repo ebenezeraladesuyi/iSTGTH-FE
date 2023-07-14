@@ -101,6 +101,5 @@ margin-bottom: 8px;
 
 @media screen and (max-width: 320px) {
   margin-left: 4px;
-//   margin-right: 10px;
 }
 `;
