@@ -3,6 +3,9 @@
 import styled from "styled-components";
 import logo from "../../../assets/Jpegs/optiLogo.jpg";
 import { useState } from "react";
+import { ImMenu } from "react-icons/im"
+import { CgClose } from "react-icons/cg"
+
 
 const Header = () => {
 
@@ -17,6 +20,12 @@ const Header = () => {
   }
 
   window.addEventListener("scroll", changeBg)
+
+  const [out, setOut] = useState(false)
+
+  const outMobile = () => {
+    setOut(!out)
+  }
 
   return (
     <div>
@@ -50,6 +59,50 @@ const Header = () => {
 
                 <Signup bb={scroll ? "1px solid #1c15e7" : "1px solid white"} clr={scroll ? "#1c15e7" : "white"}  style={{transition:"all 350ms ease-in-out"}}>Join Us</Signup>
               </Buttons>
+
+              { out ?
+                <Toggle onClick={outMobile}>
+                  <CgClose />
+                </Toggle>
+              :
+                <Toggle onClick={outMobile}>
+                  <ImMenu />
+                </Toggle>
+              }
+
+              {/* <Toggle onClick={outMobile}>
+                 <ImMenu />
+              </Toggle> */}
+
+              { out ? 
+                <Mob onClick={outMobile}>
+                  <div></div>
+
+                  <Mobile>
+                    <Navs1>
+                      <Nav1 style={{transition:"all 350ms ease-in-out"}} 
+                      >Home</Nav1>
+                      <Nav1 style={{transition:"all 350ms ease-in-out"}} 
+                      >Members</Nav1>
+                      <Nav1 style={{transition:"all 350ms ease-in-out"}} 
+                      >Contact Us</Nav1>
+                      <Nav1 style={{transition:"all 350ms ease-in-out"}} 
+                      >Donate</Nav1>
+                      <Nav1 style={{transition:"all 350ms ease-in-out"}} 
+                      >About</Nav1>
+                    </Navs1>
+
+                    <Buttons1>
+                      <Signin1 style={{transition:"all 350ms ease-in-out"}}>Signin</Signin1>
+
+                      <Signup1 style={{transition:"all 350ms ease-in-out"}}>Join Us</Signup1>
+                    </Buttons1>
+
+                  </Mobile>
+                </Mob>
+                :
+                null
+              }
                 
             </HeadHold>
 
@@ -63,7 +116,127 @@ export default Header;
 
 // const Head = styled.div``;
 
+// const Toggle = styled.div``;
+
 // const Head = styled.div``;
+
+// const Toggle = styled.div``;
+
+// const Head = styled.div``;
+
+// const Toggle = styled.div``;
+
+const Signup1 = styled.button`
+width: 100%;
+height: 40px;
+cursor: pointer;
+font-weight: 700;
+background: transparent;
+color:  #1c15e7;
+border: 1px solid #1c15e7;
+border-radius: 5px;
+margin-top: 15px;
+
+&:hover{
+  background-color: #1c15e7;
+  border: 1px solid #1c15e7;
+}
+`;
+
+const Signin1 = styled.button`
+width: 100%;
+height: 40px;
+cursor: pointer;
+background-color: #1c15e7;
+color: white;
+border: none;
+border-radius: 5px;
+font-weight: 700;
+
+  &:hover{
+    background-color: #1c15e7;
+    color: white;
+  }
+`;
+
+const Buttons1 = styled.div`
+padding: 30px 15px;
+`;
+
+const Nav1 = styled.div`
+font-weight: 700;
+cursor: pointer;
+color: #1c15e7;
+border-bottom: 1px solid #1c15e7;
+height: 30px;
+
+&:hover{
+    color: orange;
+}
+`;
+
+const Navs1 = styled.div`
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 30px;
+`;
+
+const Mobile = styled.div`
+width: 300px;
+height: 430px;
+background: white;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+padding: 10px 10px;
+margin-right: 75px;
+backdrop-filter: blur(5px);
+
+// --transform-scale-x: .95;
+// --transform-scale-y: .95;
+// --transform-skew-y: 12deg;
+
+@media screen and (max-width: 425px) {
+  margin-right: 45px;
+}
+
+@media screen and (max-width: 375px) {
+  margin-right: 35px;
+}
+
+@media screen and (max-width: 320px) {
+  margin-right: 35px;
+}
+`;
+
+const Mob = styled.div`
+width: 100%;
+min-height: 100vh;
+display: flex;
+justify-content: space-between;
+position: absolute;
+top: 80px;
+`;
+
+const Toggle = styled.div`
+display: none;
+
+@media screen and (max-width: 768px) {
+    display: block;
+    background: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #1c15e7;
+}
+`;
 
 const Signup = styled.button<{bb: string, clr: string}>`
 padding: 10px 15px;
@@ -77,7 +250,6 @@ border: ${(props) => props.bb};
 border-radius: 5px;
 
 &:hover{
-  // background-color: #1A395B;
   background-color: #1c15e7;
   border: 1px solid #1c15e7;
 }
@@ -94,7 +266,6 @@ border-radius: 5px;
 font-weight: 700;
 
   &:hover{
-    // background-color: #1A395B;
     background-color: #1c15e7;
     color: white;
   }
@@ -102,6 +273,10 @@ font-weight: 700;
 
 const Buttons = styled.div`
 gap: 2rem;
+
+@media screen and (max-width: 768px) {
+    display: none;
+}
 `;
 
 const Nav = styled.div<{cl: string}>`
@@ -118,6 +293,10 @@ const Navs = styled.div`
 display: flex;
 align-items: center;
 gap: 1.5rem;
+
+@media screen and (max-width: 768px) {
+    display: none;
+}
 `;
 
 const LogoImg = styled.img`

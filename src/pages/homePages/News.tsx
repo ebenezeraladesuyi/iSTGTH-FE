@@ -7,6 +7,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NewsCard } from "../../components";
 import image1 from "../../assets/Jpegs/opti3.jpg"
+import image2 from "../../assets/Jpegs/idanra.jpg"
+import image3 from "../../assets/Jpegs/p1000-5.jpg"
+import image4 from "../../assets/Jpegs/idanre2.jpeg"
+// import image5 from "../../assets/Jpegs/opti3.jpg"
 
 
 const News = () => {
@@ -50,7 +54,16 @@ const News = () => {
                   />
 
                   <NewsCard 
-                      newsImage={image1}
+                      newsImage={image2}
+                      headline="iSTGTH celebrates 5 year of Giving."
+                      details="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis placeat aut maiores vero laboriosam numquam tempora mollitia ullam cum. Assumenda in reprehenderit distinctio quibusdam odit."
+                      date="12 Jul, 2023"
+                      time="10:22am"
+                      location="Lagos"
+                  />
+
+                  <NewsCard 
+                      newsImage={image3}
                       headline="iSTGTH celebrates 5 year of Giving."
                       details="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis placeat aut maiores vero laboriosam numquam tempora mollitia ullam cum. Assumenda in reprehenderit distinctio quibusdam odit."
                       date="12 Jul, 2023"
@@ -68,16 +81,7 @@ const News = () => {
                   />
 
                   <NewsCard 
-                      newsImage={image1}
-                      headline="iSTGTH celebrates 5 year of Giving."
-                      details="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis placeat aut maiores vero laboriosam numquam tempora mollitia ullam cum. Assumenda in reprehenderit distinctio quibusdam odit."
-                      date="12 Jul, 2023"
-                      time="10:22am"
-                      location="Lagos"
-                  />
-
-                  <NewsCard 
-                      newsImage={image1}
+                      newsImage={image4}
                       headline="iSTGTH celebrates 5 year of Giving."
                       details="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis placeat aut maiores vero laboriosam numquam tempora mollitia ullam cum. Assumenda in reprehenderit distinctio quibusdam odit."
                       date="12 Jul, 2023"

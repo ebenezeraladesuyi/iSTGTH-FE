@@ -1,14 +1,14 @@
 // import React from 'react'
 
 // import { NewsCard } from "../../components"
-import Contact from "./Contact"
-import Donate from "./Donate"
-import Footer from "./Footer"
+// import Contact from "./Contact"
+// import Donate from "./Donate"
+// import Footer from "./Footer"
 import Hero from "./Hero"
 import Involved from "./Involved"
-import News from "./News"
+// import News from "./News"
 import Projects from "./Projects"
-import Record from "./Record"
+// import Record from "./Record"
 
 
 const HomeComp = () => {
@@ -18,11 +18,11 @@ const HomeComp = () => {
       <Hero />
       <Involved />
       <Projects />
-      <Record />
+      {/* <Record />
       <News />
       <Donate />
       <Contact />
-      <Footer />
+      <Footer /> */}
 
     </div>
   )

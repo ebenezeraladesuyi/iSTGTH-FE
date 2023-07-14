@@ -67,6 +67,10 @@ margin-top: 10px;
 const CardIcon = styled.div`
 width: 100%;
 height: 60%;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
 `;
 
 const CardHold = styled.div`
@@ -81,4 +85,22 @@ justify-content: space-between;
 align-items: center;
 overflow: hidden;
 margin-left: 15px;
+margin-bottom: 8px;
+
+@media screen and (max-width: 768px) {
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 475px) {
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 375px) {
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 320px) {
+  margin-left: 4px;
+//   margin-right: 10px;
+}
 `;

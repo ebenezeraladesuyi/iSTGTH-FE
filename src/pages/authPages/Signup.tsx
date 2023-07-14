@@ -265,6 +265,26 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 2rem;
+
+@media screen and (max-width: 768px) {
+        background: white;
+        opacity: 0.8;
+        z-index: 20;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+@media screen and (max-width: 425px) {
+        width: 300px;
+    }
+
+@media screen and (max-width: 375px) {        
+        width: 290px;
+    }
+
+@media screen and (max-width: 320px) {
+        width: 250px;
+    }
 `;
 
 const SignupRight = styled.div`
@@ -273,6 +293,14 @@ height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
+
+@media screen and (max-width: 768px) {
+    width: 100%;
+    background-image: url(${signupImg});
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+}
 `;
 
 const SignCover = styled.div`
@@ -292,6 +320,10 @@ background-image: url(${signupImg});
 background-size: cover;
 background-position: center;
 position: relative;
+
+@media screen and (max-width: 768px) {
+    display: none;
+}
 `;
 
 const Sign = styled.div`

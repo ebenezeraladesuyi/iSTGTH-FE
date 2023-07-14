@@ -44,7 +44,9 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
             >
                 {/* <CardImg src="" /> */}
 
-                <Image src={newsImage} />
+                {/* <Image> */}
+                    <Imag src={newsImage} />
+                {/* </Image> */}
 
                 <Blac></Blac>
 
@@ -117,14 +119,25 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   display: flex;
   align-items: center;
   `;
-  
-  const Image = styled.img`
+
+  const Imag = styled.img`
   width: 100%;
-  height: 300px;
+  height: 100%;
   position: absolute;
   top:0;
   left: 0;
   `;
+  
+//   const Image = styled.div`
+//   width: 100%;
+//   height: 100%;
+// //   position: absolute;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   top:0;
+//   left: 0;
+//   `;
   
   const Loc = styled.div`
   font-size: 12px;
@@ -165,8 +178,9 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   width: 90px;
   height: 30px;
   border-radius: 15px;
-  margin-left: 20px; 
-  margin-bottom: 7px;
+  position: absolute;
+  left: 20px; 
+  bottom: 80px;
   color: white;
   display: flex;
   align-items: center;
@@ -179,9 +193,10 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   z-index: 10;
   font-size: 20px;
   font-weight: 700;
+  position: absolute;
   width: 80%;
-  margin-left: 20px;
-  margin-bottom: 15px;
+  left: 20px;
+  bottom: 15px;
   `;
   
   const Blac = styled.div`
@@ -194,12 +209,10 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   const CardImgs = styled.div`
   width: 100%;
   height: 300px;
-  background-size: cover;
-  background-position: center;
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   `;
   
   const Card = styled.div`

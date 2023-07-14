@@ -18,7 +18,7 @@ const Hero = () => {
           <HerroLeft>
 
           <Create>
-            BUILDING HOPE <br />
+            BUILDING HOPE.<br />
             <span>
               <Typewriter
                 options={{ loop: true }}
@@ -148,6 +148,10 @@ border: 1px solid #e5e1e1fb;
   background:  #1c15e7;
   border: none;
 }
+
+@media screen and (max-width: 320px) {
+  padding: 15px 20px;
+}
 `;
 
 const Life = styled.div`
@@ -155,12 +159,36 @@ font-size: 17px;
 margin-top: 10px;
 // color: rgb(24,24,100);
 color: #e5e1e1fb;
+
+@media screen and (max-width: 375px) {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 320px) {
+  font-size: 13px;
+}
 `;
 
 const Create = styled.div`
 font-size: 55px;
 font-weight: 700;
 color: white;
+
+@media screen and (max-width: 768px) {
+  font-size: 45px;
+}
+
+@media screen and (max-width: 425px) {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 375px) {
+  font-size: 35px;
+}
+
+@media screen and (max-width: 320px) {
+  font-size: 30px;
+}
 `;
 
 const HerroLeft = styled.div`
@@ -173,6 +201,10 @@ height: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
+
+// @media screen and (max-width: 320px) {
+//   justify-content: center;
+// }
 `;
 
 const Black = styled.div`
@@ -195,4 +227,8 @@ background-image: url(${bg});
 background-size: cover;
 position: relatiive;
 overflow: hidden;
+
+@media screen and (max-width: 425px) {
+  background-position: center;
+}
 `;

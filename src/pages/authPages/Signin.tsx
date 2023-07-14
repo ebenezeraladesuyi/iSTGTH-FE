@@ -22,7 +22,7 @@ const Signin = () => {
 
                         <FullName2 placeholder="Email" />
 
-                        <FullName2 placeholder="Create Password" />
+                        <FullName2 placeholder="Password" />
 
                         <Signupp2>Signin</Signupp2>
 
@@ -242,7 +242,7 @@ justify-content: center;
 align-items: center;
 
 @media screen and (max-width: 768px) {
-    width: 90%;
+    width: 100%;
     background-image: url(${signupImg});
     background-size: cover;
     background-position: center;
