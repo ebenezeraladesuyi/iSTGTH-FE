@@ -40,6 +40,13 @@ const Projects = () => {
           }
           },
           {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+          },
+          {
               breakpoint: 475,
               settings: {
                   slidesToShow: 1,
@@ -174,4 +181,8 @@ justify-content: center;
 align-items: center;
 background: #f8fffe;
 overflow: hidden;
+
+@media screen and (max-width: 500px) {
+  height: 65vh;
+}
 `;

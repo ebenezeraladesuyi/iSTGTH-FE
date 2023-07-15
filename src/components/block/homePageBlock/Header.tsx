@@ -199,7 +199,7 @@ backdrop-filter: blur(5px);
 // --transform-scale-y: .95;
 // --transform-skew-y: 12deg;
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
   margin-right: 45px;
 }
 

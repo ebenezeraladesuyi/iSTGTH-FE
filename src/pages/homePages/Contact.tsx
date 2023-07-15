@@ -131,10 +131,22 @@ font-size: 18px;
 text-align: center;
 width: 30%;
 // margin-left: 7px;
-gap: 5px;
+color: orange;
 
 span{
     font-size: 13px;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+  width: 40%;
+  gap: 5px;
+}
+
+@media screen and (max-width: 375px) {
+  span{
+      font-size: 10px;
+  }
 }
 `;
 
@@ -142,17 +154,41 @@ const Phone = styled.div`
 display: flex;
 width: 80%;
 justify-content: space-between;
+flex-wrap: wrap;
+
+@media screen and (max-width: 768px) {
+    justify-content: center;
+    gap: 1rem;
+}
 `;
 
 const Quote = styled.div`
 font-size: 14px;
 font-weight: 700;
+
+@media screen and (max-width: 768px) {
+  font-size: 12px;
+  text-align: center;
+}
+
+@media screen and (max-width: 375px) {
+  font-size: 10px;
+  width: 80%;
+}
 `;
 
 const Get = styled.div`
 color: orange;
 font-size: 25px;
 font-weight: 600;
+
+@media screen and (max-width: 768px) {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 375px) {
+  font-size: 17px;
+}
 `;
 
 const ConHold = styled.div`
@@ -164,6 +200,14 @@ flex-direction: column;
 justify-content: space-between;
 align-items: center;
 gap: 1rem;
+
+@media screen and (max-width: 600px) {
+  width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  width: 95%;
+}
 `;
 
 const Con = styled.div`
@@ -174,5 +218,14 @@ justify-content: center;
 align-items: center;
 // background-image: linear-gradient(100deg, #000000 15%, #1c15e7);
 // background-color: #1c15e7;
+
+// @media screen and (max-width: 768px) {
+//   padding-top: 30px;
+//   padding-bottom: 30px;
+// }
+
+// @media screen and (max-width: 500px) {
+//   height: 70vh
+// }
 `;
 

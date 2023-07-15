@@ -25,35 +25,35 @@ const Record = () => {
                     <Pros>Total Projects</Pros>
                 </Total>
 
-<Total>
-    <Icon>
-        <GiReceiveMoney />
-    </Icon>
+                <Total>
+                    <Icon>
+                        <GiReceiveMoney />
+                    </Icon>
 
-    <Number>N1,000,000+</Number>
+                    <Number>N1,000,000+</Number>
 
-    <Pros>Raised Funds</Pros>
-</Total>
+                    <Pros>Raised Funds</Pros>
+                </Total>
 
-<Total>
-    <Icon>
-        <MdOutlineVolunteerActivism />
-    </Icon>
+                <Total>
+                    <Icon>
+                        <MdOutlineVolunteerActivism />
+                    </Icon>
 
-    <Number>100+</Number>
+                    <Number>100+</Number>
 
-    <Pros>Satisfied Donors</Pros>
-</Total>
+                    <Pros>Satisfied Donors</Pros>
+                </Total>
 
-<Total>
-    <Icon>
-        <IoIosPeople />
-    </Icon>
+                <Total>
+                    <Icon>
+                        <IoIosPeople />
+                    </Icon>
 
-    <Number>1000+</Number>
+                    <Number>1000+</Number>
 
-    <Pros>Happy Beneficiaries</Pros>
-</Total>
+                    <Pros>Happy Beneficiaries</Pros>
+                </Total>
 
             </RecHold>
 
@@ -72,16 +72,32 @@ export default Record;
 const Pros = styled.div`
 font-size: 20px;
 font-weight: 700;
+
+@media screen and (max-width: 768px) {
+  font-size: 17px;
+}
+
+@media screen and (max-width: 375px) {
+  font-size: 15px;
+}
 `;
 
 const Number = styled.div`
 font-size: 35px;
 font-weight: 700;
+
+@media screen and (max-width: 768px) {
+  font-size: 25px;
+}
 `;
 
 const Icon = styled.div`
 font-size: 50px;
 font-weight: 700;
+
+@media screen and (max-width: 768px) {
+  font-size: 40px;
+}
 `;
 
 const Total = styled.div`
@@ -89,14 +105,32 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+@media screen and (max-width: 500px) {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  width: 90%;
+}
 `;
 
 const RecHold = styled.div`
 width: 90%;
 display: flex;
+flex-wrap: wrap;
 justify-content: space-between;
 align-items: center;
 color: white;
+
+@media screen and (max-width: 425px) {
+  width: 80%;
+}
+
+@media screen and (max-width: 375px) {
+    justify-content: center;
+}
 `;
 
 const Rec = styled.div`
@@ -106,4 +140,9 @@ background-image: linear-gradient(120deg, #000000, #1c15e7);
 display: flex;
 justify-content: center;
 align-items: center;
+
+@media screen and (max-width: 500px) {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 `;

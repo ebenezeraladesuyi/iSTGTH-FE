@@ -128,7 +128,7 @@ height: 200px;
 background: #1c15e7;
 border-radius: 10px;
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
     width: 16px;
     height: 150px;
 }
@@ -146,7 +146,7 @@ opacity: 0.8;
 // border-right: 4px solid #1c15e7;
 border-radius: 25px;
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
     width: 85%;
 }
 

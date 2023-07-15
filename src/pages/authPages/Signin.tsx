@@ -27,7 +27,9 @@ const Signin = () => {
                         <Signupp2>Signin</Signupp2>
 
 
-                        {/* <SignCover3></SignCover3> */}
+                        <SignCover3 style={{marginBottom:"-20px"}}>Forgot Password?</SignCover3>
+
+                      <SignCover3 style={{marginBottom:"10px"}}><span>Don't have an Account?</span>Signup</SignCover3>
 
                     </SignupForm2>
                 </SignupRight2>
@@ -94,7 +96,21 @@ export default Signin;
 
 // const Foot = styled.div``;
 
-// const Foot = styled.div``;
+const SignCover3 = styled.div`
+cursor: pointer;
+font-size: 11px;
+color: #1c15e7;
+font-weight: 700;
+
+&:hover{
+  color: orange;
+}
+
+span{
+  color: orange;
+  cursor: not-allowed;
+}
+`;
 
 const Han = styled.div`
 display: flex;

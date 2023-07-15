@@ -118,6 +118,10 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   margin-left: 10px;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 320px) {
+    margin-left: 5px;
+  }
   `;
 
   const Imag = styled.img`
@@ -141,18 +145,33 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   
   const Loc = styled.div`
   font-size: 12px;
-  color:
+
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
+  }
   `;
   
   const DateIcon = styled.div`
   font-size: 15px;
   color: orange;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
   `;
   
   const Dater = styled.div`
   display: flex;
   align: items: center;
   gap: 3px;
+
+  @media screen and (max-width: 320px) {
+    gap: 2px;
+  }
   `;
   
   const Timer = styled.div`
@@ -160,6 +179,14 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   display: flex;
   gap: 8px;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    gap: 5px;
+  }
+
+//   @media screen and (max-width: 320px) {
+//     gap: 5px;
+//   }
   `;
   
   const NewInfo = styled.div`
@@ -170,6 +197,10 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   font-weight: 400;
   text-align: justify;
   color: #1c15e7;
+
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
   `;
   
   const Latest = styled.div`
@@ -186,6 +217,13 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   align-items: center;
   justify-content: center;
   font-weight: 600;
+
+  @media screen and (max-width: 320px) {
+    bottom: 60px;
+    font-size: 12px;
+    width: 80px;
+    height: 30px;
+  }
   `;
   
   const Headline = styled.div`
@@ -197,6 +235,10 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   width: 80%;
   left: 20px;
   bottom: 15px;
+
+  @media screen and (max-width: 320px) {
+    font-size: 17px;
+  }
   `;
   
   const Blac = styled.div`
@@ -223,4 +265,30 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   flex-direction: column;
   align-items: center;
   margin-left: 35px;
+
+  @media screen and (max-width: 768px) {
+    width: 320px;
+    margin-left: 15px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 320px;
+    margin-left: 25px;
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 320px;
+    margin-left: 27px;
+  }
+
+  @media screen and (max-width: 375px) {
+    width:  320px;
+    margin-left: 5px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width:  270px;
+    height: 400px;
+    margin-bottom: 55px;
+  }
   `;

@@ -7,12 +7,11 @@ import { FaTwitter } from "react-icons/fa";
 
 
 const Footer = () => {
+
   return (
     <div>
         <Foot>
-            <FootHold>
-
-                
+            <FootHold>                
 
               <Logo2>
                 <LogoImg2 src={logo} alt="logo"/>
@@ -74,6 +73,14 @@ const Socials = styled.div`
 display: flex;
 align-items: center;
 gap: 1.5rem;
+
+@media screen and (max-width: 768px) {
+  gap: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  gap: 0.5rem;
+}
 `;
 
 const Navis = styled.div`
@@ -91,6 +98,20 @@ display: flex;
 align-items: center;
 gap: 2rem;
 color: white;
+
+@media screen and (max-width: 768px) {
+  gap: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 `;
 
 const LogoImg2 = styled.img`
@@ -111,8 +132,15 @@ overflow: hidden;
 const FootHold = styled.div`
 width: 90%;
 display: flex;
+flex-wrap: wrap;
 justify-content: space-between;
 // align-items: center;
+
+@media screen and (max-width: 500px) {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 `;
 
 const Foot = styled.div`
@@ -122,5 +150,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 background-image: linear-gradient(120deg, #000000, #1c15e7);
+overflow: hidden;
+
+@media screen and (max-width: 500px) {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 `;
 

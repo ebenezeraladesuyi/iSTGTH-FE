@@ -24,7 +24,7 @@ const Donate = () => {
 
         <Create2>
           <i>Fundraising for the  <span>People
-          </span> and<br /> Causes you Care About</i>
+          </span> and Causes you Care About</i>
         </Create2>
 
         <Button2>Donate</Button2> 
@@ -50,6 +50,14 @@ const Ital = styled.div`
 const Icon = styled.div`
 font-size: 60px;
 color: white;
+
+@media screen and (max-width: 425px) {
+  font-size: 50px;
+}
+
+@media screen and (max-width: 320px) {
+  font-size: 40px;
+}
 `;
 
 const Support = styled.div`
@@ -57,6 +65,14 @@ font-size: 18px;
 color: #cccaca;
 margin-top: 15px;
 margin-bottom: 15px;
+
+@media screen and (max-width: 425px) {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 320px) {
+  font-size: 12px;
+}
 `;
 
 const Button2 = styled.button`
@@ -75,6 +91,16 @@ cursor: pointer;
   border: none;
   background:  #1c15e7;
 }
+
+@media screen and (max-width: 425px) {
+  width: 170px;
+  height: 45px;
+}
+
+@media screen and (max-width: 425px) {
+  width: 140px;
+  height: 40px;
+}
 `;
 
 const Create2 = styled.div`
@@ -82,6 +108,23 @@ font-size: 40px;
 font-weight: 700;
 color: white;
 text-align: center;
+width: 60%;
+
+@media screen and (max-width: 768px) {
+  width: 90%;
+}
+
+@media screen and (max-width: 425px) {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 375px) {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 320px) {
+  font-size: 22px;
+}
 `;
 
 const HerroHold2 = styled.div`

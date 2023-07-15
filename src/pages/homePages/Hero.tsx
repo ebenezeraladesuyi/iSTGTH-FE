@@ -156,7 +156,7 @@ border: 1px solid #e5e1e1fb;
 
 const Life = styled.div`
 font-size: 17px;
-margin-top: 10px;
+margin-top: 20px;
 // color: rgb(24,24,100);
 color: #e5e1e1fb;
 
@@ -176,10 +176,12 @@ color: white;
 
 @media screen and (max-width: 768px) {
   font-size: 45px;
+  line-height: 65px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
   font-size: 40px;
+  line-height: 55px;
 }
 
 @media screen and (max-width: 375px) {

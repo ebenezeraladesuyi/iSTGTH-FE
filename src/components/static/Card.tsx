@@ -96,7 +96,7 @@ margin-bottom: 8px;
 }
 
 @media screen and (max-width: 375px) {
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 320px) {

@@ -24,7 +24,37 @@ const News = () => {
   speed: 700,
   slidesToShow: 3,
   slidesToScroll: 1,
-  rtl: true
+  rtl: true,
+  responsive: [
+    {
+    breakpoint: 1000,
+    settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+    }
+    },
+      {
+      breakpoint: 770,
+      settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+      }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        }
+      },
+      {
+          breakpoint: 475,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+          }
+      }
+  ]
 };
 
 
@@ -131,6 +161,31 @@ justify-content: center;
 span{
   font-size: 55px;
 }
+
+@media screen and (max-width: 768px) {
+  font-size: 30px;
+
+  span{
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  font-size: 25px;
+  margin-top: 10px;
+
+  span{
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  font-size: 18px;
+
+  span{
+    font-size: 25px;
+  }
+}
 `;
 
 const NewsHold = styled.div`
@@ -148,4 +203,10 @@ justify-content: center;
 align-items: center;
 padding-bottom: 30px;
 padding-top: 30px;
+overflow: hidden;
+
+@media screen and (max-width: 500px) {
+  height: 70vh;
+  padding-bottom: 0px;
+}
 `;

@@ -110,6 +110,8 @@ const Signup = () => {
 
                         <Signupp>Signup</Signupp>
 
+                        <SignCover5 style={{marginBottom:"10px"}}>Have an Account?<span>Signin</span></SignCover5>
+
 
                     </SignupForm>
                 </SignupRight>
@@ -126,7 +128,19 @@ export default Signup;
 
 // const Foot = styled.div``;
 
-// const Foot = styled.div``;
+const SignCover5 = styled.div`
+color: #1c15e7;
+font-size: 11px;
+
+span{
+    color: orange;
+    cursor: pointer;
+
+    &:hover{
+        color: #1c15e7;
+    }
+}
+`;
 
 const Upload = styled.label`
 position: absolute;
@@ -256,7 +270,7 @@ position: relative;
 
 const SignupForm = styled.form`
 width: 350px;
-height: 650px;
+height: 700px;
 padding: 10px;
 // box-shadow: 0 0 3px gray;
 border-radius: 7px;
@@ -315,11 +329,12 @@ position: absolute;
 
 const SignupLeft = styled.div`
 width: 50%;
-height: 105vh;
+height: 112vh;
 background-image: url(${signupImg});
 background-size: cover;
 background-position: center;
 position: relative;
+
 
 @media screen and (max-width: 768px) {
     display: none;
@@ -328,8 +343,12 @@ position: relative;
 
 const Sign = styled.div`
 width: 100%;
-min-height: 105vh;
+height: 112vh;
 display: flex;
 justify-content: space-between;
 align-items: center;
+
+@media screen and (max-width: 768px) {
+    // height: 100%;
+}
 `;
