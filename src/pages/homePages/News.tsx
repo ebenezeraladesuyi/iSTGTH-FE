@@ -210,4 +210,10 @@ overflow: hidden;
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+@media screen and (max-width: 400px) {
+  height: 75vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 `;
