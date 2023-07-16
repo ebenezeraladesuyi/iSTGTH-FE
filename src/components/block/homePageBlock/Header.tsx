@@ -156,6 +156,9 @@ border: 1px solid #1c15e7;
 border-radius: 5px;
 margin-top: 15px;
 text-decoration: none;
+display: flex;
+justify-content: center;
+align-items: center;
 
 &:hover{
   background-color: #1c15e7;
@@ -174,6 +177,9 @@ border: none;
 border-radius: 5px;
 font-weight: 700;
 text-decoration: none;
+display: flex;
+justify-content: center;
+align-items: center;
 
   &:hover{
     background-color: #1c15e7;
@@ -183,6 +189,8 @@ text-decoration: none;
 
 const Buttons1 = styled.div`
 padding: 30px 15px;
+display: flex;
+flex-direction: column;
 `;
 
 const Nav1 = styled.div`
@@ -215,6 +223,7 @@ display: flex;
 flex-direction: column;
 padding: 10px 10px;
 margin-right: 75px;
+box-shadow: 0 0 2px gray;
 backdrop-filter: blur(5px);
 
 // --transform-scale-x: .95;
