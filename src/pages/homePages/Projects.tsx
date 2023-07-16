@@ -8,7 +8,7 @@ import { Card } from "../../components";
 import cardImage from "../../assets/Jpegs/opti1.jpg";
 import cardImage2 from "../../assets/Jpegs/idanre3.jpeg";
 import cardImage3 from "../../assets/Jpegs/p1000-2.jpg";
-import cardImage4 from "../../assets/Jpegs/p1000.jpg";
+import cardImage4 from "../../assets/Jpegs/p1000-5.jpg";
 // import cardImage5 from "../../assets/Jpegs/opti1.jpg";
 // import cardImage6 from "../../assets/Jpegs/opti1.jpg";
 
