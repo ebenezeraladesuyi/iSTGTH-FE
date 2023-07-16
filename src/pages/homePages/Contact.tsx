@@ -8,7 +8,7 @@ import { MdOutlineMail } from "react-icons/md"
 
 const Contact = () => {
   return (
-    <div>
+    <div id="contactus">
 
         <Con>
 

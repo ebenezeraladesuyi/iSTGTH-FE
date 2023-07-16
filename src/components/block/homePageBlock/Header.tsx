@@ -4,7 +4,9 @@ import styled from "styled-components";
 import logo from "../../../assets/Jpegs/optiLogo.jpg";
 import { useState } from "react";
 import { ImMenu } from "react-icons/im"
-import { CgClose } from "react-icons/cg"
+import { CgClose } from "react-icons/cg";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 
 
 const Header = () => {
@@ -44,20 +46,33 @@ const Header = () => {
               <Navs>
                 <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
                 >Home</Nav>
+
                 <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
                 >Members</Nav>
-                <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
-                >Contact Us</Nav>
+
+                <Link offset={-100} smooth={true} duration={500} to="contactus">
+                    <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
+                    >
+                      Contact Us
+                    </Nav>
+                </Link>
+
                 <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
                 >Donate</Nav>
+
                 <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
                 >About</Nav>
+
               </Navs>
 
               <Buttons>
-                <Signin bbg={scroll ? "#1c15e7" : "white"} clr={scroll ? "white" : "#1c15e7"}  style={{transition:"all 350ms ease-in-out"}}>Signin</Signin>
+                <Signin 
+                  to='/signin'
+                  bbg={scroll ? "#1c15e7" : "white"} clr={scroll ? "white" : "#1c15e7"}  style={{transition:"all 350ms ease-in-out"}}>Signin</Signin>
 
-                <Signup bb={scroll ? "1px solid #1c15e7" : "1px solid white"} clr={scroll ? "#1c15e7" : "white"}  style={{transition:"all 350ms ease-in-out"}}>Join Us</Signup>
+                <Signup 
+                  to='/signup'
+                  bb={scroll ? "1px solid #1c15e7" : "1px solid white"} clr={scroll ? "#1c15e7" : "white"}  style={{transition:"all 350ms ease-in-out"}}>Join Us</Signup>
               </Buttons>
 
               { out ?
@@ -93,9 +108,13 @@ const Header = () => {
                     </Navs1>
 
                     <Buttons1>
-                      <Signin1 style={{transition:"all 350ms ease-in-out"}}>Signin</Signin1>
+                      <Signin1 
+                        to='/signin'
+                        style={{transition:"all 350ms ease-in-out"}}>Signin</Signin1>
 
-                      <Signup1 style={{transition:"all 350ms ease-in-out"}}>Join Us</Signup1>
+                      <Signup1
+                        to='/signup'
+                        style={{transition:"all 350ms ease-in-out"}}>Join Us</Signup1>
                     </Buttons1>
 
                   </Mobile>
@@ -126,7 +145,7 @@ export default Header;
 
 // const Toggle = styled.div``;
 
-const Signup1 = styled.button`
+const Signup1 = styled(NavLink)`
 width: 100%;
 height: 40px;
 cursor: pointer;
@@ -136,14 +155,16 @@ color:  #1c15e7;
 border: 1px solid #1c15e7;
 border-radius: 5px;
 margin-top: 15px;
+text-decoration: none;
 
 &:hover{
   background-color: #1c15e7;
   border: 1px solid #1c15e7;
+  color: white;
 }
 `;
 
-const Signin1 = styled.button`
+const Signin1 = styled(NavLink)`
 width: 100%;
 height: 40px;
 cursor: pointer;
@@ -152,6 +173,7 @@ color: white;
 border: none;
 border-radius: 5px;
 font-weight: 700;
+text-decoration: none;
 
   &:hover{
     background-color: #1c15e7;
@@ -238,13 +260,14 @@ display: none;
 }
 `;
 
-const Signup = styled.button<{bb: string, clr: string}>`
+const Signup = styled(NavLink)<{bb: string, clr: string}>`
 padding: 10px 15px;
 cursor: pointer;
 margin-left: 20px;
 font-weight: 700;
 // background-color: #1A395B;
 background: transparent;
+text-decoration: none;
 color:  ${(props) => props.clr};
 border: ${(props) => props.bb};
 border-radius: 5px;
@@ -252,18 +275,20 @@ border-radius: 5px;
 &:hover{
   background-color: #1c15e7;
   border: 1px solid #1c15e7;
+  color: white;
 }
 `;
 
-const Signin = styled.button<{bbg: string, clr: string}>`
+const Signin = styled(NavLink)<{bbg: string, clr: string}>`
 padding: 10px 15px;
 cursor: pointer;
-background-color: ${(props) => props.bbg};
+background-color: ${(props: any) => props.bbg};
 // color: #1A395B;
-color: ${(props) => props.clr};
+color: ${(props: any) => props.clr};
 border: none;
 border-radius: 5px;
 font-weight: 700;
+text-decoration: none;
 
   &:hover{
     background-color: #1c15e7;

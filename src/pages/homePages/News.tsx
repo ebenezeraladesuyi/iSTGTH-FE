@@ -207,6 +207,7 @@ overflow: hidden;
 
 @media screen and (max-width: 500px) {
   height: 70vh;
-  padding-bottom: 0px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 `;
