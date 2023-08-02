@@ -44,23 +44,27 @@ const Header = () => {
               </Logo>
 
               <Navs>
-                <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
-                >Home</Nav>
+              <NavLink to="/" style={{textDecoration:"none"}}>
+                  <Nav cl={scroll ? "#1c15e7" : "rgb(247, 181, 58)"} style={{transition:"all 350ms ease-in-out"}} 
+                  >Home</Nav>
+                </NavLink>
 
-                <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
-                >Members</Nav>
+                <NavLink to="/members" style={{textDecoration:"none"}}>
+                  <Nav cl={scroll ? "#1c15e7" : "rgb(247, 181, 58)"} style={{transition:"all 350ms ease-in-out"}} 
+                  >Members</Nav>
+                </NavLink>
 
                 <Link offset={-100} smooth={true} duration={500} to="contactus">
-                    <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
+                    <Nav cl={scroll ? "#1c15e7" : "rgb(247, 181, 58)"} style={{transition:"all 350ms ease-in-out"}} 
                     >
                       Contact Us
                     </Nav>
                 </Link>
 
-                <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
+                <Nav cl={scroll ? "#1c15e7" : "rgb(247, 181, 58)"} style={{transition:"all 350ms ease-in-out"}} 
                 >Donate</Nav>
 
-                <Nav cl={scroll ? "#1c15e7" : "white"} style={{transition:"all 350ms ease-in-out"}} 
+                <Nav cl={scroll ? "#1c15e7" : "rgb(247, 181, 58)"} style={{transition:"all 350ms ease-in-out"}} 
                 >About</Nav>
 
               </Navs>
@@ -68,7 +72,7 @@ const Header = () => {
               <Buttons>
                 <Signin 
                   to='/signin'
-                  bbg={scroll ? "#1c15e7" : "white"} clr={scroll ? "white" : "#1c15e7"}  style={{transition:"all 350ms ease-in-out"}}>Signin</Signin>
+                  bbg={scroll ? "#1c15e7" : "white"} clr={scroll ? "white" : "#1c15e7"}  style={{transition:"all 350ms ease-in-out"}}>Sign in</Signin>
 
                 <Signup 
                   to='/signup'
@@ -110,7 +114,7 @@ const Header = () => {
                     <Buttons1>
                       <Signin1 
                         to='/signin'
-                        style={{transition:"all 350ms ease-in-out"}}>Signin</Signin1>
+                        style={{transition:"all 350ms ease-in-out"}}>Sign in</Signin1>
 
                       <Signup1
                         to='/signup'

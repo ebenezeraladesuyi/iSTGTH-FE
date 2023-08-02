@@ -5,6 +5,14 @@ import signupImg from "../../assets/Jpegs/p1000-4.jpg"
 import avatar from "../../assets/Jpegs/avatar.jpg"
 import { BsCamera } from "react-icons/bs";
 import { useState } from "react";
+// import { UseAppDispatch } from "../../hooks/global/Store";
+import * as yup from "yup";
+import { useMutation } from "@tanstack/react-query";
+import { signup } from "../../utils/Apis";
+import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import DatasIsaLoading from "../homePages/DataIsLoading";
 
 
 const Signup = () => {
@@ -19,6 +27,77 @@ const Signup = () => {
         setImage(file);
         setMyAvatar(save);
     }
+
+    // const dispatch = UseAppDispatch();
+
+    const schema = yup
+        .object({
+            fullName: yup.string().required("input fullname"),
+            businessName : yup.string().required(),
+            businessContact : yup.string().required(),
+            businessServices : yup.string().required(),
+            email : yup.string().required("input a valid email"),
+            memberImage : yup.string().required("upload an image"),
+            password : yup.string().min(8).required("create a password"),
+            confirmPassword : yup.string().oneOf([yup.ref("password")], "password must match").required("password does not match")
+        })
+        .required();
+
+        type formData = yup.InferType<typeof schema>;
+
+        const posting = useMutation({
+            mutationKey: ['iStandUser'],
+            mutationFn: signup,
+
+
+            onSuccess: (data: any) => {
+                if (data.message === "Registration Done") {
+                  Swal.fire({
+                    title: "Account Created",
+                    text: "Pls, check your mail for OTP verification",
+                    icon: "success",
+                  });
+                //   navigate("/otp");
+                }
+                if (data.response.data.err === "Can't Use An Existing Email ❌❌") {
+                  Swal.fire({
+                    icon: "error",
+                    title: "Something Went Wrong",
+                    text: `${data.response.data.err}`,
+                  });
+                }
+                if (data.message === "Network Error") {
+                  Swal.fire({
+                    icon: "error",
+                    title: `${data.message}`,
+                    text: "Please Check Your Internet Connection",
+                  });
+                }
+              },
+
+        });
+
+        const {
+          handleSubmit,
+          formState: { errors },
+        //   reset,
+          register,
+        } = useForm<formData>({
+          resolver: yupResolver(schema),
+        });
+
+
+        const Submit = handleSubmit(async (data) => {
+          posting.mutate(data);
+
+          console.log(data)
+      
+        //   if (posting?.mutate(data)) {
+            // reset();
+        //   } else {
+        //     return null;
+        //   }
+        });
 
 
   return (
@@ -77,7 +156,7 @@ const Signup = () => {
 
                 
                 <SignupRight>
-                    <SignupForm>
+                    <SignupForm onSubmit={Submit}>
         
                         {/* <Logo3>
                             <LogoImg3 src={logo3} alt="logo"/>
@@ -86,29 +165,74 @@ const Signup = () => {
                         {/* <Up>Become a Member</Up> */}
 
                         <ImageHold>
-                            <SignupImage src={myAvatar} id="img" />
+                            <SignupImage src={myAvatar} id="img" {...register("memberImage")} />
 
-                            <input type="file" id="input" style={{display:"none"}} onChange={imgUpload} />
+                            <input type="file" id="input" style={{display:"none"}} 
+                            onChange={imgUpload} 
+                            />
 
                             <Upload htmlFor="input" >
                                 <BsCamera style={{ fontSize: "18px" }} />
                                 Upload
                             </Upload>
-                        </ImageHold>
+                        </ImageHold>              
+                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                                {errors?.memberImage && errors?.memberImage?.message}
+                            </p>
 
-                        <FullName placeholder="FullName" />
+                        <FullName placeholder="FullName"
+                            {...register("fullName")} />              
+                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                                {errors?.fullName && errors?.fullName?.message}
+                            </p>
 
-                        <FullName placeholder="Email" />
+                        <FullName placeholder="Email"
+                            {...register("email")} 
+                            />              
+                        <p style={{ fontSize: "7px", margin:"0px" }}>
+                            {errors?.email && errors?.email?.message}
+                        </p>
 
-                        <FullName placeholder="Business Name" />
+                        <FullName placeholder="Business Name"
+                            {...register("businessName")} />              
+                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                                {errors?.businessName && errors?.businessName?.message}
+                            </p>
 
-                        <FullName placeholder="Business Contact" />
+                        <FullName placeholder="Business Contact"
+                            {...register("businessContact")} />              
+                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                                {errors?.businessContact && errors?.businessContact?.message}
+                            </p>
 
-                        <FullName placeholder="Create Password" />
+                        <FullName placeholder="Business Services"
+                            {...register("businessServices")} />              
+                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                                {errors?.businessServices && errors?.businessServices?.message}
+                            </p>
 
-                        <FullName placeholder="Confirm Password" />
+                        <FullName placeholder="Create Password"
+                            {...register("password")} />              
+                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                                {errors?.password && errors?.password?.message}
+                            </p>
 
-                        <Signupp>Signup</Signupp>
+                        <FullName placeholder="Confirm Password"
+                            {...register("confirmPassword")} />              
+                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                                {errors?.confirmPassword && errors?.confirmPassword?.message}
+                            </p>
+
+                        {
+                            posting.isLoading ? (
+                                <>
+                                    <DatasIsaLoading />
+                                </>
+                            ) : (
+
+                                <Signupp type="submit">Signup</Signupp>
+                            )
+                        }
 
                         <SignCover5 style={{marginBottom:"10px"}}>Have an Account?<span>Signin</span></SignCover5>
 
@@ -152,6 +276,17 @@ border-radius: 5px;
 right: -50px;
 bottom: -20px;
 cursor: pointer;
+
+animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
 
 &:hover{
     background: orange;
@@ -236,7 +371,7 @@ border-radius: 50%;
 
 const ImageHold = styled.div`
 width: 110px;
-height: 110px;
+height: 115px;
 border-radius: 50%;
 border: 2px solid #1c15e7;
 display: flex;
@@ -278,7 +413,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 2rem;
+gap: 1rem;
 
 @media screen and (max-width: 768px) {
         background: white;
@@ -343,7 +478,7 @@ position: relative;
 
 const Sign = styled.div`
 width: 100%;
-height: 112vh;
+height: 120vh;
 display: flex;
 justify-content: space-between;
 align-items: center;

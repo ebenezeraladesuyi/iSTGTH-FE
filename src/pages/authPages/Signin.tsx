@@ -1,18 +1,192 @@
-// import React from 'react'
+import { useState } from 'react'
 
 import { styled } from "styled-components";
 import signupImg from "../../assets/Jpegs/p1000-3.jpg"
 import logo4 from "../../assets/Jpegs/optiLogo.jpg";
+import * as yup from "yup";
+// import { yupResolver } from "@hookform/resolvers/yup";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { UseAppDispatch } from '../../hooks/global/Store';
+// import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+// import { signin } from '../../utils/Apis';
+import DatasIsaLoading from '../homePages/DataIsLoading';
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useFormik } from 'formik';
+import { User } from '../../hooks/global/ReduxState';import axios from "axios";
+// import { iUser } from "../types";
+
+const url = "https://istgth-apis.onrender.com/users";
+
+
+// import { useAuth } from '../../hooks/useSWR';
 
 
 const Signin = () => {
+
+  const queryClient = useQueryClient()
+
+  const [showPassword, setshowPassword] = useState(false);
+
+  const fn = () => [setshowPassword(!showPassword)];
+
+  const dispatch = UseAppDispatch();
+  // const navigate = useNavigate();
+
+  const validationSchema = yup
+  .object({
+    email: yup.string().required("Please, input your email"),
+    password: yup.string().required("Please, input your password"),
+  })
+  .required();
+
+  // type formData = yup.InferType<typeof schema>;
+
+  const posting = useMutation(
+    (formData: { email: string; password: string }) => axios.post(`${url}/signin`, formData),
+    {
+      onSuccess: (data : any) => {
+        // Handle successful sign-in here, e.g., updating Redux state, storing tokens, etc.
+        dispatch(User(data));
+        queryClient.invalidateQueries(['iStandUser']);
+
+        
+      if (data.data) {
+        Swal.fire({
+          title: "Signed in successfully",
+          text: "Welcome!",
+          timer: 3000,
+          icon: "success",
+          timerProgressBar: true,
+          // willClose: () => {
+          //   window.location.reload();
+          // },
+        });
+        // navigate("/dashboardhome", { replace: true });
+      } else if (data.message === "Request failed with status code 400") {
+        Swal.fire({
+          icon: "error",
+          title: `${data.message}`,
+          text: "User does not exist",
+        }) 
+        // else (data.message === "Network Error") {
+        //   Swal.fire({
+        //     icon: "error",
+        //     title: `${data.message}`,
+        //     text: "Please Check Your Internet Connection",
+        //   });
+        // } 
+      } 
+      else if (data.message === "Network Error") {
+        Swal.fire({
+          icon: "error",
+          title: `${data.message}`,
+          text: "Please Check Your Internet Connection",
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: `Something Went Wrong`,
+          text: `${data.response.data.err} ❌❌`,
+        });
+      }
+    }
+  }
+  );
+  //   mutationFn: signin,
+
+  //   onSuccess: (data) => {
+
+  //     dispatch(User(data));
+
+  //     queryClient.invalidateQueries(["istandUser"])
+
+      // if (myData.data) {
+      //   Swal.fire({
+      //     title: "Signed in successfully",
+      //     text: "Welcome!",
+      //     timer: 3000,
+      //     icon: "success",
+      //     timerProgressBar: true,
+      //     willClose: () => {
+      //       window.location.reload();
+      //     },
+      //   });
+      //   // navigate("/dashboardhome", { replace: true });
+      // } else if (myData.message === "Network Error") {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: `${myData.message}`,
+      //     text: "Please Check Your Internet Connection",
+      //   });
+
+      //   // Swal.fire(
+      //   //   `${data.message}`,
+      //   //   "Please Check Your Internet Connection",
+      //   //   "question"
+      //   // );
+      // } else {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: `Something Went Wrong`,
+      //     text: `${myData.response.data.err} ❌❌`,
+      //   });
+      // }
+    // },
+  // });
+
+  // const {
+  //   handleSubmit,
+  //   formState: { errors },
+  //   // reset,
+  //   register,
+  // } = useForm<formData>({
+  //   resolver: yupResolver(schema),
+  // });
+
+  // const Submit = handleSubmit(async (data) => {
+  //   posting.mutate(data);
+  // });
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      posting.mutate(values);
+      console.log(values)
+    },
+  });
+
+
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const { login, isLoading, isError } = useAuth();
+
+  // const handleLogin = async (e : any) => {
+  //   e.preventDefault();
+  //   try {
+  //     await login({email, password});
+  //     console.log(login)
+  //     // Redirect to the dashboard or other protected routes on successful login
+  //   } catch (error : any) {
+  //     console.error("Login error:", error.message);
+  //   }
+  // };
+
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
+
   return (
     <div>
 
         <Sign2>
                 
                 <SignupRight2>
-                    <SignupForm2>
+                    <SignupForm2 onSubmit={formik.handleSubmit}>
         
                         <Logo4>
                             <LogoImg4 src={logo4} alt="logo"/>
@@ -20,14 +194,51 @@ const Signin = () => {
 
                         <Up2>Let's Get You Back in..</Up2>
 
-                        <FullName2 placeholder="Email" />
+                        <FullName2 
+                          placeholder="Email"
+                          type="email"
+                          // value={email}
+                          // onChange={(e : any) => setEmail(e.target.value)}
+                          {...formik.getFieldProps("email")}
+                        />
+                        <p> {formik.touched.email && formik.errors.email} </p>
 
-                        <FullName2 placeholder="Password" />
+                        <Wrap><FullName2
+                          type={showPassword ? "text" : "password"}
+                          style={{
+                            height: "90%",
+                            boxShadow: "none",
+                            width: "100%",
+                            borderBottom: "none",
+                          }}
+                          placeholder="Password" 
+                          // value={password}
+                          // onChange={(e : any) => setPassword(e.target.value)}
+                          {...formik.getFieldProps("password")}
+                          />
+                          
+                          {showPassword ? (
+                            <Icon onClick={fn}>
+                              <AiOutlineEye />
+                            </Icon>
+                          ) : (
+                            <Icon onClick={fn}>
+                              <AiOutlineEyeInvisible />
+                            </Icon>
+                          )}
+                        </Wrap>
+                        <p> {formik.touched.password && formik.errors.password} </p>
 
-                        <Signupp2>Signin</Signupp2>
+                        {posting.isLoading ? (
+                          <>
+                            <DatasIsaLoading />
+                          </>
+                        ) : (
+                          <Signupp2 type='submit'>Signin</Signupp2>
+                         )}
 
 
-                        <SignCover3 style={{marginBottom:"-20px"}}>Forgot Password?</SignCover3>
+                        <SignCover3 style={{marginBottom:"-10px"}}>Forgot Password?</SignCover3>
 
                       <SignCover3 style={{marginBottom:"10px"}}><span>Don't have an Account?</span>Signup</SignCover3>
 
@@ -94,13 +305,36 @@ const Signin = () => {
 
 export default Signin;
 
-// const Foot = styled.div``;
+const Icon = styled.div`
+  color: #8a2be2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 3px;
+  font-size: 18px;
+  margin-right: 5px;
+`;
+
+const Wrap = styled.div`
+width: 90%;
+height: 37px;
+padding-left: 5px;
+outline: none;
+border: none;
+border-bottom: 2px solid #1c15e7;
+border-radius: 7px;
+// background: transparent;
+display: flex;
+justify-content: space-between;
+`;
 
 const SignCover3 = styled.div`
 cursor: pointer;
 font-size: 11px;
 color: #1c15e7;
 font-weight: 700;
+// margin-top 10px;
 
 &:hover{
   color: orange;
@@ -229,7 +463,12 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 2rem;
+gap: 1rem;
+
+p{
+  margin: 0px;
+  font-size: 8px;
+}
 
 @media screen and (max-width: 768px) {
         background: white;

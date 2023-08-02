@@ -1,5 +1,6 @@
 // import React from 'react'
 
+
 import { styled } from "styled-components";
 import { BiNews } from "react-icons/bi";
 import Slider from "react-slick";
@@ -11,6 +12,7 @@ import image2 from "../../assets/Jpegs/idanra.jpg"
 import image3 from "../../assets/Jpegs/p1000-5.jpg"
 import image4 from "../../assets/Jpegs/idanre2.jpeg"
 // import image5 from "../../assets/Jpegs/opti3.jpg"
+ 
 
 
 const News = () => {
