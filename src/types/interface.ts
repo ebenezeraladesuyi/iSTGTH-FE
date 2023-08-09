@@ -9,6 +9,6 @@ export interface iUser {
     businessContact? : string;
     businessServices? : string;
     email? : string;
-    memberImage? : string;
+    // memberImage? : string;
     password? : string
 }

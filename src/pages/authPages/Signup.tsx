@@ -2,9 +2,9 @@
 
 import { styled } from "styled-components";
 import signupImg from "../../assets/Jpegs/p1000-4.jpg"
-import avatar from "../../assets/Jpegs/avatar.jpg"
-import { BsCamera } from "react-icons/bs";
-import { useState } from "react";
+// import avatar from "../../assets/Jpegs/avatar.jpg"
+// import { BsCamera } from "react-icons/bs";
+// import { useState } from "react";
 // import { UseAppDispatch } from "../../hooks/global/Store";
 import * as yup from "yup";
 import { useMutation } from "@tanstack/react-query";
@@ -13,22 +13,26 @@ import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import DatasIsaLoading from "../homePages/DataIsLoading";
+import { User } from "../../hooks/global/ReduxState";
+import { UseAppDispatch } from "../../hooks/global/Store";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Signup = () => {
 
-    const [myAvatar, setMyAvatar] = useState(avatar)
-    const [image, setImage] = useState("")
+    // const [myAvatar, setMyAvatar] = useState(avatar)
+    // const [image, setImage] = useState("")
 
-    const imgUpload = (e : any) => {
-        const file = e.target.files[0];
-        const save = URL.createObjectURL(file);
-        image
-        setImage(file);
-        setMyAvatar(save);
-    }
+    // const imgUpload = (e : any) => {
+    //     const file = e.target.files[0];
+    //     const save = URL.createObjectURL(file);
+    //     image
+    //     setImage(file);
+    //     setMyAvatar(save);
+    // }
 
-    // const dispatch = UseAppDispatch();
+    const dispatch = UseAppDispatch();
+    const navigate = useNavigate();
 
     const schema = yup
         .object({
@@ -37,7 +41,7 @@ const Signup = () => {
             businessContact : yup.string().required(),
             businessServices : yup.string().required(),
             email : yup.string().required("input a valid email"),
-            memberImage : yup.string().required("upload an image"),
+            // memberImage : yup.string().required("upload an image"),
             password : yup.string().min(8).required("create a password"),
             confirmPassword : yup.string().oneOf([yup.ref("password")], "password must match").required("password does not match")
         })
@@ -51,18 +55,23 @@ const Signup = () => {
 
 
             onSuccess: (data: any) => {
-                if (data.message === "Registration Done") {
+
+                dispatch(User(data))
+
+                console.log(data)
+
+                if (data.message === "user created") {
                   Swal.fire({
                     title: "Account Created",
                     text: "Pls, check your mail for OTP verification",
                     icon: "success",
                   });
-                //   navigate("/otp");
+                  navigate("/signin");
                 }
-                if (data.response.data.err === "Can't Use An Existing Email ❌❌") {
+                if (data.response.data.err === "This user already exist") {
                   Swal.fire({
                     icon: "error",
-                    title: "Something Went Wrong",
+                    title: "User already exist",
                     text: `${data.response.data.err}`,
                   });
                 }
@@ -90,7 +99,7 @@ const Signup = () => {
         const Submit = handleSubmit(async (data) => {
           posting.mutate(data);
 
-          console.log(data)
+        //   console.log(data)
       
         //   if (posting?.mutate(data)) {
             // reset();
@@ -164,62 +173,63 @@ const Signup = () => {
 
                         {/* <Up>Become a Member</Up> */}
 
-                        <ImageHold>
-                            <SignupImage src={myAvatar} id="img" {...register("memberImage")} />
+                        {/* <ImageHold> */}
+                            {/* <SignupImage src={myAvatar} id="img"  />
 
                             <input type="file" id="input" style={{display:"none"}} 
-                            onChange={imgUpload} 
-                            />
+                            // onChange={imgUpload} 
+                            {...register("memberImage")} 
+                            /> */}
 
-                            <Upload htmlFor="input" >
+                            {/* <Upload htmlFor="input" >
                                 <BsCamera style={{ fontSize: "18px" }} />
                                 Upload
                             </Upload>
                         </ImageHold>              
                             <p style={{ fontSize: "7px", margin:"0px" }}>
                                 {errors?.memberImage && errors?.memberImage?.message}
-                            </p>
+                            </p> */}
 
                         <FullName placeholder="FullName"
                             {...register("fullName")} />              
-                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                            <p style={{ fontSize: "7px", marginTop:"-7px" }}>
                                 {errors?.fullName && errors?.fullName?.message}
                             </p>
 
                         <FullName placeholder="Email"
                             {...register("email")} 
                             />              
-                        <p style={{ fontSize: "7px", margin:"0px" }}>
+                        <p style={{ fontSize: "7px", marginTop:"-7px" }}>
                             {errors?.email && errors?.email?.message}
                         </p>
 
                         <FullName placeholder="Business Name"
                             {...register("businessName")} />              
-                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                            <p style={{ fontSize: "7px", marginTop:"-7px" }}>
                                 {errors?.businessName && errors?.businessName?.message}
                             </p>
 
                         <FullName placeholder="Business Contact"
                             {...register("businessContact")} />              
-                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                            <p style={{ fontSize: "7px", marginTop:"-7px" }}>
                                 {errors?.businessContact && errors?.businessContact?.message}
                             </p>
 
                         <FullName placeholder="Business Services"
                             {...register("businessServices")} />              
-                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                            <p style={{ fontSize: "7px", marginTop:"-7px" }}>
                                 {errors?.businessServices && errors?.businessServices?.message}
                             </p>
 
                         <FullName placeholder="Create Password"
                             {...register("password")} />              
-                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                            <p style={{ fontSize: "7px", marginTop:"-7px" }}>
                                 {errors?.password && errors?.password?.message}
                             </p>
 
                         <FullName placeholder="Confirm Password"
                             {...register("confirmPassword")} />              
-                            <p style={{ fontSize: "7px", margin:"0px" }}>
+                            <p style={{ fontSize: "7px", marginTop:"-7px" }}>
                                 {errors?.confirmPassword && errors?.confirmPassword?.message}
                             </p>
 
@@ -234,7 +244,11 @@ const Signup = () => {
                             )
                         }
 
-                        <SignCover5 style={{marginBottom:"10px"}}>Have an Account?<span>Signin</span></SignCover5>
+                        <SignCover5 style={{marginBottom:"10px"}}>Have an Account?
+                            <Link style={{ textDecoration: "none" }} to={"/signin"}>
+                            <span>Signin</span>
+                            </Link>
+                        </SignCover5>
 
 
                     </SignupForm>
@@ -266,34 +280,34 @@ span{
 }
 `;
 
-const Upload = styled.label`
-position: absolute;
-padding: 7px 14px;
-background: #1c15e7;
-color: white;
-border: none;
-border-radius: 5px;
-right: -50px;
-bottom: -20px;
-cursor: pointer;
+// const Upload = styled.label`
+// position: absolute;
+// padding: 7px 14px;
+// background: #1c15e7;
+// color: white;
+// border: none;
+// border-radius: 5px;
+// right: -50px;
+// bottom: -20px;
+// cursor: pointer;
 
-animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+// animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: .5;
-  }
-}
+// @keyframes pulse {
+//   0%, 100% {
+//     opacity: 1;
+//   }
+//   50% {
+//     opacity: .5;
+//   }
+// }
 
-&:hover{
-    background: orange;
-    // border: 1px solid #1c15e7;
-    // color: #1c15e7;
-}
-`;
+// &:hover{
+//     background: orange;
+//     // border: 1px solid #1c15e7;
+//     // color: #1c15e7;
+// }
+// `;
 
 const Han = styled.div`
 display: flex;
@@ -362,23 +376,23 @@ border-bottom: 2px solid #1c15e7;
 border-radius: 7px;
 `;
 
-const SignupImage = styled.img`
-width: 90%;
-height: 90%;
-border: 1ps solid #1c15e7;
-border-radius: 50%;
-`;
+// const SignupImage = styled.img`
+// width: 90%;
+// height: 90%;
+// border: 1ps solid #1c15e7;
+// border-radius: 50%;
+// `;
 
-const ImageHold = styled.div`
-width: 110px;
-height: 115px;
-border-radius: 50%;
-border: 2px solid #1c15e7;
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-`;
+// const ImageHold = styled.div`
+// width: 110px;
+// height: 115px;
+// border-radius: 50%;
+// border: 2px solid #1c15e7;
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// position: relative;
+// `;
 
 // const Up = styled.div`
 // margin: 0;
@@ -405,7 +419,7 @@ position: relative;
 
 const SignupForm = styled.form`
 width: 350px;
-height: 700px;
+height: 95%;
 padding: 10px;
 // box-shadow: 0 0 3px gray;
 border-radius: 7px;
@@ -464,7 +478,7 @@ position: absolute;
 
 const SignupLeft = styled.div`
 width: 50%;
-height: 112vh;
+height: 100vh;
 background-image: url(${signupImg});
 background-size: cover;
 background-position: center;
@@ -478,7 +492,7 @@ position: relative;
 
 const Sign = styled.div`
 width: 100%;
-height: 120vh;
+min-height: 100vh;
 display: flex;
 justify-content: space-between;
 align-items: center;

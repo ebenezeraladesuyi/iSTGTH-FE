@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom"
 import { Home } from "../layout"
 import { HomeComp } from "../pages"
-// import Signup from "../pages/authPages/Signup"
+import Signup from "../pages/authPages/Signup"
 import { SignupLayout } from "../layout/signupLayout"
 import { SigninLayout } from "../layout/signinLayout"
 import Signin from "../pages/authPages/Signin"
 import { MemberLayout } from "../layout/memberLayout"
 import { Members } from "../pages/memberPages"
-import SignUp2 from "../pages/authPages/Signup2"
+// import SignUp2 from "../pages/authPages/Signup2"
 
 
 export const element = createBrowserRouter([
@@ -27,7 +27,7 @@ export const element = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <SignUp2 />
+                element: <Signup />
             }
         ]
     },

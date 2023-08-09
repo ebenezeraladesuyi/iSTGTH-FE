@@ -14,6 +14,7 @@ import DatasIsaLoading from '../homePages/DataIsLoading';
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useFormik } from 'formik';
 import { User } from '../../hooks/global/ReduxState';import axios from "axios";
+import { Link, useNavigate } from 'react-router-dom';
 // import { iUser } from "../types";
 
 const url = "https://istgth-apis.onrender.com/users";
@@ -31,7 +32,7 @@ const Signin = () => {
   const fn = () => [setshowPassword(!showPassword)];
 
   const dispatch = UseAppDispatch();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const validationSchema = yup
   .object({
@@ -62,7 +63,7 @@ const Signin = () => {
           //   window.location.reload();
           // },
         });
-        // navigate("/dashboardhome", { replace: true });
+        navigate("/", { replace: true });
       } else if (data.message === "Request failed with status code 400") {
         Swal.fire({
           icon: "error",
@@ -240,7 +241,15 @@ const Signin = () => {
 
                         <SignCover3 style={{marginBottom:"-10px"}}>Forgot Password?</SignCover3>
 
-                      <SignCover3 style={{marginBottom:"10px"}}><span>Don't have an Account?</span>Signup</SignCover3>
+                        <Link style={{ textDecoration: "none" }} to={"/signup"}>
+                          <SignCover3 style={{marginBottom:"10px"}}><span>Don't have an Account?</span>Signup</SignCover3>
+                        </Link>
+
+                        <div style={{display:"flex", width:"90%", justifyContent:"space-between"}}>
+                          <div></div>
+
+                          <Link to={"/"}><button style={{cursor:"pointer", background:"#8a2be2", color:"white", border:"none", height:"30px", width:"70px", borderRadius:"6px"}}>Home</button></Link>
+                        </div>
 
                     </SignupForm2>
                 </SignupRight2>

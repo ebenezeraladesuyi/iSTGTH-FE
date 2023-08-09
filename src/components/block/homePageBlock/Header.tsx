@@ -5,11 +5,18 @@ import logo from "../../../assets/Jpegs/optiLogo.jpg";
 import { useState } from "react";
 import { ImMenu } from "react-icons/im"
 import { CgClose } from "react-icons/cg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
+import { UseAppDispatch, useAppSelector } from "../../../hooks/global/Store";
+import { logout } from "../../../hooks/global/ReduxState";
 
 
 const Header = () => {
+
+  const online = useAppSelector((state) => state?.currentUser)
+
+  const dispatch = UseAppDispatch();
+  const navigate = useNavigate()
 
   const [scroll, setScroll] = useState(false);
 
@@ -69,15 +76,38 @@ const Header = () => {
 
               </Navs>
 
-              <Buttons>
-                <Signin 
-                  to='/signin'
-                  bbg={scroll ? "#1c15e7" : "white"} clr={scroll ? "white" : "#1c15e7"}  style={{transition:"all 350ms ease-in-out"}}>Sign in</Signin>
 
-                <Signup 
-                  to='/signup'
-                  bb={scroll ? "1px solid #1c15e7" : "1px solid white"} clr={scroll ? "#1c15e7" : "white"}  style={{transition:"all 350ms ease-in-out"}}>Join Us</Signup>
+              <Buttons>
+              { online ?
+                  <Signin 
+                    to='/signin'
+                    bbg={scroll ? "#1c15e7" : "white"} clr={scroll ? "white" : "#1c15e7"}  
+                    style={{transition:"all 350ms ease-in-out"}}
+                    onClick={() => {
+                      dispatch(logout());
+                      navigate("/")
+                    }}
+                  >
+                    Logout
+                  </Signin>
+              :
+
+                  <>
+                    <Signin 
+                      to='/signin'
+                      bbg={scroll ? "#1c15e7" : "white"} clr={scroll ? "white" : "#1c15e7"}  style={{transition:"all 350ms ease-in-out"}}>
+                        Sign in
+                      </Signin>
+
+                    <Signup 
+                      to='/signup'
+                      bb={scroll ? "1px solid #1c15e7" : "1px solid white"} clr={scroll ? "#1c15e7" : "white"}  style={{transition:"all 350ms ease-in-out"}}>
+                        Join Us
+                    </Signup>
+                  </>
+              }
               </Buttons>
+
 
               { out ?
                 <Toggle onClick={outMobile}>
@@ -112,13 +142,37 @@ const Header = () => {
                     </Navs1>
 
                     <Buttons1>
+
+                    { online ? 
+                    
                       <Signin1 
                         to='/signin'
-                        style={{transition:"all 350ms ease-in-out"}}>Sign in</Signin1>
+                        style={{transition:"all 350ms ease-in-out"}}
+                        onClick={() => {
+                        dispatch(logout());
+                        navigate("/")}}
+                      >
+                        Logout
+                      </Signin1>
+
+                      : 
+
+                      
+                      <>
+                      <Signin1 
+                        to='/signin'
+                        style={{transition:"all 350ms ease-in-out"}}>
+                          Sign in
+                      </Signin1>
 
                       <Signup1
                         to='/signup'
-                        style={{transition:"all 350ms ease-in-out"}}>Join Us</Signup1>
+                        style={{transition:"all 350ms ease-in-out"}}>
+                          Join Us
+                      </Signup1>
+                      </>
+                    
+                    }
                     </Buttons1>
 
                   </Mobile>

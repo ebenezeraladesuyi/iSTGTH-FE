@@ -1,7 +1,9 @@
 import axios from "axios";
 import { iUser } from "../types";
 
-const url = "https://istgth-apis.onrender.com/users";
+// const url = "https://istgth-apis.onrender.com/users";
+
+const url = "https://istandfoundation-api.onrender.com/users"
 
 
 export const signup = async (data : iUser) => {
@@ -37,6 +39,6 @@ export const signin = async (data : iUser) => {
 
 export const GetOneUser = async (id: any) => {
     return await axios
-      .get(`${url}/${id}/`)
+      .get(`${url}/${id}`)
       .then((res) => res.data);
   };
