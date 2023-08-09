@@ -5,10 +5,10 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useMutation } from '@tanstack/react-query';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { signup } from "../../utils/Apis"; // Replace '../api' with the path to your API functions
 // import { iUser } from '../../types';
-import { User, UserError } from '../../hooks/global/ReduxState';
+// import { User } from '../../hooks/global/ReduxState';
 
 // // Define the validation schema using Yup
 // const schema = yup.object().shape({
@@ -33,7 +33,7 @@ import { User, UserError } from '../../hooks/global/ReduxState';
 
 const SignUp2: React.FC = () => {
   
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const currentUser = useSelector((state: RootState) => state.currentUser);
   // const error = useSelector((state: RootState) => state.error);
 
@@ -69,16 +69,16 @@ const SignUp2: React.FC = () => {
       //   // Handle errors here if needed
       // },
 
-      onSuccess: (data: any) => {
-        try {
-          dispatch(User(data));
-        } catch (err: any) {
-          dispatch(UserError(err.message))
-        }
+      // onSuccess: (data: any) => {
+        // try {
+          // dispatch(User(data));
+        // } catch (err: any) {
+          // dispatch(UserError(err.message))
+        // }
         // dispatch(User(response.data));
         // Handle successful signup, e.g., redirect to dashboard
         // dispatch(UserError(err.message))
-      },
+      // },
     }
 );
 
