@@ -58,7 +58,7 @@ const Signup = () => {
 
                 dispatch(User(data))
 
-                console.log(data)
+                // console.log(data)
 
                 if (data.message === "user created") {
                   Swal.fire({
