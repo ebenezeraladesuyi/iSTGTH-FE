@@ -5,12 +5,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { Card } from "../../components";
-import cardImage from "../../assets/Jpegs/opti1.jpg";
-import cardImage2 from "../../assets/Jpegs/idanre3.jpeg";
-import cardImage3 from "../../assets/Jpegs/p1000-2.jpg";
-import cardImage4 from "../../assets/Jpegs/p1000-5.jpg";
-// import cardImage5 from "../../assets/Jpegs/opti1.jpg";
-// import cardImage6 from "../../assets/Jpegs/opti1.jpg";
+import cardImage1 from "../../assets/images/IMG-20230716-WA0122.jpg";
+import cardImage2 from "../../assets/images/IMG-20230716-WA0028.jpg";
+import cardImage3 from "../../assets/images/IMG-20230716-WA0042.jpg";
+import cardImage4 from "../../assets/images/IMG-20230716-WA0036.jpg";
+import cardImage5 from "../../assets/images/IMG-20230716-WA0074.jpg";
+import cardImage6 from "../../assets/images/IMG-20230716-WA0113.jpg";
 
 
 const Projects = () => {
@@ -70,7 +70,7 @@ const Projects = () => {
                     <Slider {...settings}>
 
                          <Card
-                           image={cardImage}
+                           image={cardImage1}
                            projectPlace="Visitation To Orphanage Home, Ado-Ekiti"
                            projectDes="The organization and her Partners.paid a visit to an Ophhanage in Ado-Ekiti. Food, writing materials, clothes and lots of other gift were shared, which put a smile on the faces of the children."
                           />
@@ -94,20 +94,37 @@ const Projects = () => {
                              />
 
                              <Card
-                               image={cardImage}
+                               image={cardImage5}
                                projectPlace="Visitation To Orphanage Home, Ado-Ekiti"
                                projectDes="The organization and her Partners.paid a visit to an Ophhanage in Ado-Ekiti. Food, writing materials, clothes and lots of other gift were shared, which put a smile on the faces of the children."
                               />
 
                               <Card
-                                image={cardImage4}
+                                image={cardImage6}
                                 projectPlace="Visitation To Orphanage Home, Ado-Ekiti"
                                 projectDes="The organization and her Partners.paid a visit to an Ophhanage in Ado-Ekiti. Food, writing materials, clothes and lots of other gift were shared, which put a smile on the faces of the children."
                                />
 
+                               {/* <Card
+                                 image={cardImage5}
+                                 projectPlace="Visitation To Orphanage Home, Ado-Ekiti"
+                                 projectDes="The organization and her Partners.paid a visit to an Ophhanage in Ado-Ekiti. Food, writing materials, clothes and lots of other gift were shared, which put a smile on the faces of the children."
+                                /> */}
+
+                                {/* <Card
+                                  image={cardImage4}
+                                  projectPlace="Visitation To Orphanage Home, Ado-Ekiti"
+                                  projectDes="The organization and her Partners.paid a visit to an Ophhanage in Ado-Ekiti. Food, writing materials, clothes and lots of other gift were shared, which put a smile on the faces of the children."
+                                 /> */}
+
                     </Slider>
 
                 </Slide>
+
+                <div style={{display:"flex", justifyContent:"space-between", alignItems:"center", marginTop:"10px"}}>
+                    <div></div>
+                    <a style={{cursor:"pointer", fontSize:"12px", textDecoration:"none", fontWeight:"700", border:"1px solid #1c15e7", padding:"7px", borderRadius:"5px"}} href="https://www/facebook.com/istandtogivetohumanity">See more Projects...</a>
+                </div>
 
             </ProHold>
 

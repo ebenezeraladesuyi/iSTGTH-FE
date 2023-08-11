@@ -95,7 +95,7 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
                     </Loc>
                 </Dater>
 
-                <Read href="">Read more <BsArrowRightShort /></Read>
+                <Read href="https://www.facebook.com/istandtogivetohumanity">Read more <BsArrowRightShort /></Read>
 
             </Timer>
 
@@ -144,10 +144,10 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
 //   `;
   
   const Loc = styled.div`
-  font-size: 12px;
+  font-size: 11px;
 
   @media screen and (max-width: 768px) {
-    font-size: 10px;
+    font-size: 9px;
   }
   `;
   
@@ -192,6 +192,7 @@ const NewsCard:React.FC<newsProps> = ({ newsImage, headline, details, date, time
   const NewInfo = styled.div`
   font-size: 14px;
   width: 90%;
+  height: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
   font-weight: 400;

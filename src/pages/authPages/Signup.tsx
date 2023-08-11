@@ -222,13 +222,17 @@ const Signup = () => {
                             </p>
 
                         <FullName placeholder="Create Password"
-                            {...register("password")} />              
+                            {...register("password")}
+                            type="password" 
+                            />              
                             <p style={{ fontSize: "7px", marginTop:"-7px" }}>
                                 {errors?.password && errors?.password?.message}
                             </p>
 
                         <FullName placeholder="Confirm Password"
-                            {...register("confirmPassword")} />              
+                            {...register("confirmPassword")}
+                            type="password" 
+                             />              
                             <p style={{ fontSize: "7px", marginTop:"-7px" }}>
                                 {errors?.confirmPassword && errors?.confirmPassword?.message}
                             </p>

@@ -26,7 +26,7 @@ const Footer = () => {
 
               <Socials>
 
-                <Social>
+                <Social href="https://www.facebook.com/istandtogivetohumanity">
                     <AiFillFacebook />
                 </Social>
                 <Social>
@@ -35,7 +35,7 @@ const Footer = () => {
                 <Social>
                     <AiFillInstagram />
                 </Social>
-                <Social>
+                <Social href="https://istandtogiveandcarefoundation@gmail.com">
                     <AiOutlineMail />
                 </Social>
 
