@@ -42,7 +42,8 @@ export default Card;
 // const Head = styled.div``;
 
 const CardImg = styled.img`
-width: 100%;
+width: 105%;
+height: 100%;
 `;
 
 const CardText = styled.h6`

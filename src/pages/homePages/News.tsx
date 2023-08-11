@@ -88,7 +88,7 @@ const News = () => {
                   <NewsCard 
                       newsImage={image3}
                       headline="iSTGTH celebrates 5 year of Giving."
-                      details="The Royalty Dinner which celebtates 5 years of giving to humanity, will be held in Lagos,on Saturday, August 26thm 2023..."
+                      details="The Royalty Dinner which celebtates 5 years of giving to humanity, will be held in Lagos,on Saturday, August 26th 2023..."
                       date="01 Aug, 2023"
                       time="04:03pm"
                       location="Lagos"
