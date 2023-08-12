@@ -2,11 +2,12 @@
 
 import { styled } from "styled-components";
 import invImage from "../../assets/Jpegs/opti3.jpg";
+import { Link } from "react-router-dom";
 
 
 const Involved = () => {
   return (
-    <div>
+    <>
 
         <Inv>
             <InvHold>
@@ -27,14 +28,14 @@ const Involved = () => {
                     <Goals>Our goal is aim at tackling specific social, economic, environmental, or humanitarian issues. One of our primary goal is to make a positive impact on these issues and bring about meaningful change in society.
                     </Goals>
 
-                    <InButton>Get Involved</InButton>
+                    <Link style={{ textDecoration: "none" }} to={"/signup"}><InButton>Get Involved</InButton></Link>
 
                 </InvRight>
 
             </InvHold>
         </Inv>
 
-    </div>
+    </>
   )
 }
 

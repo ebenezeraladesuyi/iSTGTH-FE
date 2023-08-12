@@ -3,6 +3,7 @@
 import { styled } from "styled-components";
 import bg from "../../assets/Jpegs/opti2.jpg";
 import Typewriter from "typewriter-effect";
+import { Link } from "react-router-dom";
 // import image from "../../assets/left2.png"
 
 const Hero = () => {
@@ -44,7 +45,7 @@ const Hero = () => {
           
           <Life>Life is too short.. Give when you can..</Life>
 
-          <Button>Become A Partner</Button>
+          <Link style={{ textDecoration: "none" }} to={"/signup"}><Button>Become A Partner</Button></Link>
 
           </HerroLeft>
 
