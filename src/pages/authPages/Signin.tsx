@@ -54,8 +54,8 @@ const Signin = () => {
         
       if (data.data) {
         Swal.fire({
-          title: "Signed in successfully",
-          text: "Welcome!",
+          title: "WELCOME BACK",
+          text: "It's so cool to see you!",
           timer: 3000,
           icon: "success",
           timerProgressBar: true,

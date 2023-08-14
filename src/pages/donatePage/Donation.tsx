@@ -354,7 +354,7 @@ const Side = styled.div`
 
 const Head = styled.div`
   width: 100%;
-  min-height: 100vh;
+  min-height: 115vh;
   display: flex;
 //   margin-top: 40px;
   justify-content: center;

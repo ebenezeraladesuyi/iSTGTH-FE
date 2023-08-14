@@ -63,7 +63,7 @@ const Signup = () => {
                 if (data.message === "user created") {
                   Swal.fire({
                     title: "Account Created",
-                    text: "Pls, check your mail for OTP verification",
+                    text: "Thank You for being a Partner in the service to Humanity",
                     icon: "success",
                   });
                   navigate("/signin");
