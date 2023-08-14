@@ -73,7 +73,7 @@ const Header = () => {
                   >Donate</Nav>
                 </NavLink>
 
-                <NavLink to="/"  style={{textDecoration:"none"}}>
+                <NavLink to="/about"  style={{textDecoration:"none"}}>
                   <Nav cl={scroll ? "#1c15e7" : "rgb(247, 181, 58)"} style={{transition:"all 350ms ease-in-out"}} 
                   >About</Nav>
                 </NavLink>
@@ -156,7 +156,7 @@ const Header = () => {
                         >Donate</Nav1>
                       </NavLink>
 
-                      <NavLink to="/"  style={{textDecoration:"none"}}>
+                      <NavLink to="/about"  style={{textDecoration:"none"}}>
                         <Nav1 style={{transition:"all 350ms ease-in-out"}} 
                         >About</Nav1>
                       </NavLink>

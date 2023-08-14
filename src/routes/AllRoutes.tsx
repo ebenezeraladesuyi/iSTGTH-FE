@@ -9,6 +9,8 @@ import { MemberLayout } from "../layout/memberLayout"
 import { Members } from "../pages/memberPages"
 import { DonateLayout } from "../layout/donateLayout"
 import Donation from "../pages/donatePage/Donation"
+import AboutLayout from "../layout/aboutLayout/AboutLayout"
+import { AboutMain } from "../pages/aboutPages"
 
 
 export const element = createBrowserRouter([
@@ -59,6 +61,16 @@ export const element = createBrowserRouter([
             {
                 index: true,
                 element: <Donation />
+            }
+        ]
+    },
+    {
+        path: "/about",
+        element: <AboutLayout />,
+        children: [
+            {
+                index: true,
+                element: <AboutMain />
             }
         ]
     }
