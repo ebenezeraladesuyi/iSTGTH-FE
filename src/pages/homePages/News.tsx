@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { NewsCard } from "../../components";
-import image1 from "../../assets/images/Lagos.jpg"
+import image1 from "../../assets/images/youthDay.jpg"
 import image2 from "../../assets/images/Lagos2.jpg"
 import image3 from "../../assets/images/LagosDinner.jpg"
 import image4 from "../../assets/Jpegs/idanre2.jpeg"
@@ -78,11 +78,11 @@ const News = () => {
 
                   <NewsCard 
                       newsImage={image1}
-                      headline="iSTGTH takes August Outreach to Lagos."
-                      details="The Foundation will be taking her humanity outreach to Lagos, this August... "
-                      date="12 Jul, 2023"
-                      time="10:22am"
-                      location="Lagos"
+                      headline="iSTGTH celebrate Youth Day '23"
+                      details="One this day, we celebrate every hardworking youth out there with the vision and will to build the future and help humanity..."
+                      date="14 Aug, 2023"
+                      time="09:01am"
+                      location="Ekiti"
                   />
 
                   <NewsCard 

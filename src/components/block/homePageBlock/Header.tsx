@@ -68,11 +68,15 @@ const Header = () => {
                     </Nav>
                 </Link>
 
-                <Nav cl={scroll ? "#1c15e7" : "rgb(247, 181, 58)"} style={{transition:"all 350ms ease-in-out"}} 
-                >Donate</Nav>
+                <NavLink to="/donate"  style={{textDecoration:"none"}}>
+                  <Nav cl={scroll ? "#1c15e7" : "rgb(247, 181, 58)"} style={{transition:"all 350ms ease-in-out"}} 
+                  >Donate</Nav>
+                </NavLink>
 
-                <Nav cl={scroll ? "#1c15e7" : "rgb(247, 181, 58)"} style={{transition:"all 350ms ease-in-out"}} 
-                >About</Nav>
+                <NavLink to="/"  style={{textDecoration:"none"}}>
+                  <Nav cl={scroll ? "#1c15e7" : "rgb(247, 181, 58)"} style={{transition:"all 350ms ease-in-out"}} 
+                  >About</Nav>
+                </NavLink>
 
               </Navs>
 
@@ -129,16 +133,34 @@ const Header = () => {
 
                   <Mobile>
                     <Navs1>
-                      <Nav1 style={{transition:"all 350ms ease-in-out"}} 
-                      >Home</Nav1>
-                      <Nav1 style={{transition:"all 350ms ease-in-out"}} 
-                      >Members</Nav1>
-                      <Nav1 style={{transition:"all 350ms ease-in-out"}} 
-                      >Contact Us</Nav1>
-                      <Nav1 style={{transition:"all 350ms ease-in-out"}} 
-                      >Donate</Nav1>
-                      <Nav1 style={{transition:"all 350ms ease-in-out"}} 
-                      >About</Nav1>
+
+                      <NavLink to="/"  style={{textDecoration:"none"}}>
+                        <Nav1 style={{transition:"all 350ms ease-in-out"}} 
+                        >Home</Nav1>
+                      </NavLink>
+
+                      <NavLink to="/members"  style={{textDecoration:"none"}}>
+                        <Nav1 style={{transition:"all 350ms ease-in-out"}} 
+                        >Members</Nav1>
+                      </NavLink>
+
+                      <Link offset={-100} smooth={true} duration={500} to="contactus">
+                        <Nav1 style={{transition:"all 350ms ease-in-out"}} 
+                        >
+                        Contact Us
+                        </Nav1>
+                      </Link>
+
+                      <NavLink to="/donate"  style={{textDecoration:"none"}}>
+                        <Nav1 style={{transition:"all 350ms ease-in-out"}} 
+                        >Donate</Nav1>
+                      </NavLink>
+
+                      <NavLink to="/"  style={{textDecoration:"none"}}>
+                        <Nav1 style={{transition:"all 350ms ease-in-out"}} 
+                        >About</Nav1>
+                      </NavLink>
+
                     </Navs1>
 
                     <Buttons1>
@@ -417,7 +439,7 @@ align-items: center;
 const Head = styled.div<{bg: string, bs: string}>`
 width: 100%;
 height: 75px;
-z-index: 50;
+z-index: 250;
 box-shadow: ${(props) => props.bs };
 display: flex;
 justify-content: center;

@@ -3,6 +3,7 @@
 import { styled } from "styled-components";
 import bg1 from "../../assets/Jpegs/opti1.jpg";
 import { FaDonate } from "react-icons/fa"
+import { NavLink } from "react-router-dom";
 
 
 const Donate = () => {
@@ -27,9 +28,11 @@ const Donate = () => {
           </span> and Causes you Care About</i>
         </Create2>
 
-        <Button2>Donate</Button2> 
+        <NavLink to="/donate" style={{textDecoration:"none"}}>
+            <Button2>Donate</Button2> 
+        </NavLink>
 
-        <Ital>Coming Soon!!!</Ital>
+        {/* <Ital>Coming Soon!!!</Ital> */}
 
       </HerroHold2>
 
@@ -41,11 +44,11 @@ const Donate = () => {
 
 export default Donate;
 
-const Ital = styled.div`
-    color: #cccaca;
-    font-size: 10px;
-    margin-top: 20px;
-`;
+// const Ital = styled.div`
+//     color: #cccaca;
+//     font-size: 10px;
+//     margin-top: 20px;
+// `;
 
 const Icon = styled.div`
 font-size: 60px;

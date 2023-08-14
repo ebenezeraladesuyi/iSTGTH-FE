@@ -10,5 +10,6 @@ export interface iUser {
     businessServices? : string;
     email? : string;
     // memberImage? : string;
-    password? : string
+    password? : string;
+    MembershipNumber: string;
 }
