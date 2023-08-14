@@ -86,7 +86,7 @@ const Donation = () => {
   return (
 
     <div>
-      <Head>
+      <Head1>
         <Side>
 
           <Form>
@@ -191,7 +191,7 @@ const Donation = () => {
             </But>
           </Form>
         </Side>
-      </Head>
+      </Head1>
     </div>
   );
 };
@@ -321,7 +321,7 @@ const Icon = styled.div`
 `;
 
 const Form = styled.form`
-  height: calc(100% - 20px);
+  height: 100%;
   background-color: white;
   width: 100%;
   border-radius: 10px;
@@ -332,6 +332,7 @@ const Form = styled.form`
   align-items: center;
   // justify-content: center;
   padding-bottom: 25px;
+  margin-top: 95px;
 `;
 
 const Side = styled.div`
@@ -352,13 +353,13 @@ const Side = styled.div`
   }
 `;
 
-const Head = styled.div`
+const Head1 = styled.div`
   width: 100%;
-  min-height: 115vh;
+  min-height: 105vh;
   display: flex;
 //   margin-top: 40px;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
 //   background: rgb(110, 105, 105);
 background: rgba(6, 6, 6, 0.771);
 `;
