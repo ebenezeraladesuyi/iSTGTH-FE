@@ -1,17 +1,25 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom"
 import { Home } from "../layout"
-import { HomeComp } from "../pages"
-import Signup from "../pages/authPages/Signup"
+// import { HomeComp } from "../pages"
+// import Signup from "../pages/authPages/Signup"
 import { SignupLayout } from "../layout/signupLayout"
 import { SigninLayout } from "../layout/signinLayout"
-import Signin from "../pages/authPages/Signin"
+// import Signin from "../pages/authPages/Signin"
 import { MemberLayout } from "../layout/memberLayout"
-import { Members } from "../pages/memberPages"
+// import { Members } from "../pages/memberPages"
 import { DonateLayout } from "../layout/donateLayout"
-import Donation from "../pages/donatePage/Donation"
+// import Donation from "../pages/donatePage/Donation"
 import AboutLayout from "../layout/aboutLayout/AboutLayout"
-import { AboutMain } from "../pages/aboutPages"
+// import { AboutMain } from "../pages/aboutPages"
 
+
+const HomeComp = lazy(() => import("../pages/homePages/HomeComp"));
+const Signup = lazy(() => import("../pages/authPages/Signup"));
+const Signin = lazy(() => import("../pages/authPages/Signin"));
+const Members = lazy(() => import("../pages/memberPages/Members"));
+const Donation = lazy(() => import("../pages/donatePage/Donation"));
+const AboutMain = lazy(() => import("../pages/aboutPages/AboutMain"));
 
 export const element = createBrowserRouter([
     {

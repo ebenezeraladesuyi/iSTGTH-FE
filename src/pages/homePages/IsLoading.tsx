@@ -12,7 +12,7 @@ const IsLoading = () => {
           <img src={iStandLogo} />
           <i>I Stand To Give Foundation</i>
         </Wrap>
-        <FallingLines color="#8A2BE2" width="100" visible={true} />
+        <FallingLines color="#1c15e7" width="100" visible={true} />
         <p>Loading...</p>
       </Main>
     </div>
@@ -23,6 +23,7 @@ export default IsLoading;
 
 const Wrap = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 35px;

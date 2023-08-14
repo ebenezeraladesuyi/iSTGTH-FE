@@ -247,7 +247,7 @@ margin-left: 25px;
 
 const MemButton = styled.button`
 width: 15%;
-height: 105%;
+height: 103%;
 border: none;
 background: white;
 // background: #1c15e7;
