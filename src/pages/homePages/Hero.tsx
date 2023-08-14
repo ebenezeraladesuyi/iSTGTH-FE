@@ -200,7 +200,7 @@ z-index: 10;
 
 const HerroHold = styled.div`
 width: 90%;
-height: 100%;
+min-height: 100vh;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -222,7 +222,7 @@ top: 0;
 
 const Herro = styled.div`
 width: 100%;
-height: 100vh;
+min-height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;

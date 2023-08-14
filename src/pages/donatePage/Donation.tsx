@@ -332,7 +332,7 @@ const Form = styled.form`
   align-items: center;
   // justify-content: center;
   padding-bottom: 25px;
-  margin-top: 95px;
+  margin-top: 85px;
 `;
 
 const Side = styled.div`
