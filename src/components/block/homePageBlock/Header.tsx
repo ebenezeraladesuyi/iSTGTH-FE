@@ -330,6 +330,7 @@ display: flex;
 justify-content: space-between;
 position: absolute;
 top: 80px;
+transition: .5s ease-in-out;
 `;
 
 const Toggle = styled.div`

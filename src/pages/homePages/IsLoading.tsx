@@ -1,7 +1,11 @@
 // import React from "react";
 
 import styled from "styled-components";
-import { FallingLines } from "react-loader-spinner";
+import { 
+          // Hearts,
+          // LineWave,
+          FallingLines
+        } from "react-loader-spinner";
 import iStandLogo from "../../assets/Jpegs/optiLogo.jpg";
 
 const IsLoading = () => {
