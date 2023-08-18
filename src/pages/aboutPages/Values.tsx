@@ -1,10 +1,14 @@
 // import React from 'react'
 
 import styled from 'styled-components';
+import RevealOnScroll from '../../components/static/onScroll/RevealOnScroll';
 
 
 const Value = () => {
     return(
+     <>
+     <RevealOnScroll>
+
         <Values>
 
             <ValueHold>
@@ -40,6 +44,9 @@ const Value = () => {
             </ValueHold>
         
         </Values>
+
+     </RevealOnScroll>
+     </>
     )
 }
 

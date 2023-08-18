@@ -11,6 +11,7 @@ import image1 from "../../assets/images/youthDay.jpg"
 import image2 from "../../assets/images/Lagos2.jpg"
 import image3 from "../../assets/images/LagosDinner.jpg"
 import image4 from "../../assets/Jpegs/idanre2.jpeg"
+import RevealOnScroll from "../../components/static/onScroll/RevealOnScroll";
 // import image5 from "../../assets/Jpegs/opti3.jpg"
  
 
@@ -62,6 +63,7 @@ const News = () => {
 
   return (
     <div>
+      <RevealOnScroll>
 
         <New>
             <NewsHold>
@@ -128,6 +130,7 @@ const News = () => {
             </NewsHold>
         </New>
 
+      </RevealOnScroll>
     </div>
   )
 }

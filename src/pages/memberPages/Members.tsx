@@ -12,6 +12,7 @@ import styled from "styled-components";
 import { iUser } from "../../types";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import RevealOnScroll from "../../components/static/onScroll/RevealOnScroll";
 
 
 const Members = () => {
@@ -59,91 +60,93 @@ const Members = () => {
 
   return (
     <div>
+      <RevealOnScroll>
 
-      <Member>
+        <Member>
 
-        <MemberHold>
+          <MemberHold>
 
-          <MemberSearch>
-            <MemSrch type="text" placeholder="Input Member's Name" />  
+            <MemberSearch>
+              <MemSrch type="text" placeholder="Input Member's Name" />  
 
-            <MemButton>Search</MemButton>    
+              <MemButton>Search</MemButton>    
 
-          </MemberSearch>
+            </MemberSearch>
 
-          {/* {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.name}</td>
-              <td>{user.phone}</td>
-              <td>{user.address}</td>
-            </tr>
-          ))} */}
+            {/* {users.map((user) => (
+              <tr key={user.id}>
+                <td>{user.name}</td>
+                <td>{user.phone}</td>
+                <td>{user.address}</td>
+              </tr>
+            ))} */}
 
-          {/* <Down> */}
+            {/* <Down> */}
 
-            {users.map((user) => (
+              {users.map((user) => (
 
-              <MemberCard 
-              key={user._id}
-              >
+                <MemberCard 
+                key={user._id}
+                >
 
-              <Border></Border>
+                <Border></Border>
 
-              {/* <MemberPic src={member} /> */}
+                {/* <MemberPic src={member} /> */}
 
-              <MemberDetails>
+                <MemberDetails>
 
-                  <MemberName>
-                      <MemberEmail>Name</MemberEmail>
-                      {/* <MemberNames>Tobi Hussien Aladesuyi</MemberNames> */}
-                      <MemberNames>{user.fullName}</MemberNames>
-                  </MemberName> 
+                    <MemberName>
+                        <MemberEmail>Name</MemberEmail>
+                        {/* <MemberNames>Tobi Hussien Aladesuyi</MemberNames> */}
+                        <MemberNames>{user.fullName}</MemberNames>
+                    </MemberName> 
 
-                  <MemberName>
-                      <MemberEmail>Email</MemberEmail>
-                      {/* <MemberNames>tobi@test.com</MemberNames> */}
-                      <MemberNames>{user.email}</MemberNames>
-                  </MemberName> 
+                    <MemberName>
+                        <MemberEmail>Email</MemberEmail>
+                        {/* <MemberNames>tobi@test.com</MemberNames> */}
+                        <MemberNames>{user.email}</MemberNames>
+                    </MemberName> 
 
-                  <MemberName>
-                      <MemberEmail>Business/Profession</MemberEmail>
-                      {/* <MemberNames>Volatic Services and Production</MemberNames> */}
-                      <MemberNames>{user.businessName}</MemberNames>
-                  </MemberName>  
+                    <MemberName>
+                        <MemberEmail>Business/Profession</MemberEmail>
+                        {/* <MemberNames>Volatic Services and Production</MemberNames> */}
+                        <MemberNames>{user.businessName}</MemberNames>
+                    </MemberName>  
 
-                  <MemberName>
-                      <MemberEmail>Business Services</MemberEmail>
-                      {/* <MemberNames>Softwares and Engineering</MemberNames> */}
-                      <MemberNames>{user.businessServices}</MemberNames>
-                  </MemberName>
+                    <MemberName>
+                        <MemberEmail>Business Services</MemberEmail>
+                        {/* <MemberNames>Softwares and Engineering</MemberNames> */}
+                        <MemberNames>{user.businessServices}</MemberNames>
+                    </MemberName>
 
-                  <MemberName>
-                      <MemberEmail>Business Contact</MemberEmail>
-                      {/* <MemberNames>07056765683</MemberNames> */}
-                      <MemberNames>{user.businessContact}</MemberNames>
-                  </MemberName>
+                    <MemberName>
+                        <MemberEmail>Business Contact</MemberEmail>
+                        {/* <MemberNames>07056765683</MemberNames> */}
+                        <MemberNames>{user.businessContact}</MemberNames>
+                    </MemberName>
 
-                  <MemberName>
-                      <MemberEmail>Membership Number</MemberEmail>
-                      {/* <MemberNames>34578</MemberNames> */}
-                      <MemberNames>{user.MembershipNumber}</MemberNames>
-                  </MemberName> 
-                                      
-              </MemberDetails>
+                    <MemberName>
+                        <MemberEmail>Membership Number</MemberEmail>
+                        {/* <MemberNames>34578</MemberNames> */}
+                        <MemberNames>{user.MembershipNumber}</MemberNames>
+                    </MemberName> 
+                                        
+                </MemberDetails>
 
 
-              </MemberCard> 
+                </MemberCard> 
+                
+                ))} 
+
+            {/* </Down> */}
+
               
-              ))} 
 
-          {/* </Down> */}
+          </MemberHold>
 
-             
+        </Member>
 
-        </MemberHold>
-
-      </Member>
-
+      </RevealOnScroll>
     </div>
   )
 }

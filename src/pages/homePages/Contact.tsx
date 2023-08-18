@@ -3,11 +3,15 @@
 import { styled } from "styled-components";
 import { ImLocation2 } from "react-icons/im"
 import { BsFillTelephoneFill } from "react-icons/bs"
-import { MdOutlineMail } from "react-icons/md"
+import { MdOutlineMail } from "react-icons/md";
+import RevealOnScroll from "../../components/static/onScroll/RevealOnScroll";
 
 
 const Contact = () => {
   return (
+    <>
+    <RevealOnScroll>
+
     <div id="contactus">
 
         <Con>
@@ -56,6 +60,9 @@ const Contact = () => {
         </Con>
 
     </div>
+
+    </RevealOnScroll>
+    </>
   )
 }
 

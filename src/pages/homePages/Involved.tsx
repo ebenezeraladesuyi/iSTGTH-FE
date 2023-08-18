@@ -3,14 +3,19 @@
 import { styled } from "styled-components";
 import invImage from "../../assets/Jpegs/opti3.jpg";
 import { Link } from "react-router-dom";
+// import RevealOnScroll from "../../components/static/onScroll/RevealOnScroll";
+import SlideInComponent from "../../components/static/onScroll/SlideIn";
 
 
 const Involved = () => {
   return (
     <>
 
+    <SlideInComponent>
+
         <Inv>
             <InvHold>
+                
                 
                 <InvLeft>
                     <LeftStroke></LeftStroke>
@@ -34,6 +39,8 @@ const Involved = () => {
 
             </InvHold>
         </Inv>
+
+    </SlideInComponent>
 
     </>
   )

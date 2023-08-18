@@ -4,12 +4,15 @@ import styled from "styled-components";
 import logo from "../../assets/Jpegs/optiLogo.jpg";
 import { AiFillFacebook, AiFillInstagram, AiOutlineMail } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
+import RevealOnScroll from "../../components/static/onScroll/RevealOnScroll";
 
 
 const Footer = () => {
 
   return (
     <div>
+      <RevealOnScroll>
+
         <Foot>
             <FootHold>                
 
@@ -43,6 +46,8 @@ const Footer = () => {
 
             </FootHold>
         </Foot>
+
+      </RevealOnScroll>
     </div>
   )
 }

@@ -11,6 +11,7 @@ import cardImage3 from "../../assets/images/EpeEkiti.jpg";
 import cardImage4 from "../../assets/images/delta.jpg";
 import cardImage5 from "../../assets/images/aged.jpg";
 import cardImage6 from "../../assets/images/IMG-20230716-WA0122.jpg";
+import RevealOnScroll from "../../components/static/onScroll/RevealOnScroll";
 
 
 const Projects = () => {
@@ -59,6 +60,8 @@ const Projects = () => {
 
   return (
     <div>
+      <RevealOnScroll>
+        
         <Pro>
 
             <ProHold>
@@ -129,6 +132,8 @@ const Projects = () => {
             </ProHold>
 
         </Pro>
+
+      </RevealOnScroll>
     </div>
   )
 }

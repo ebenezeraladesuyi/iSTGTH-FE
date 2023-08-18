@@ -4,39 +4,44 @@ import { styled } from "styled-components";
 import bg1 from "../../assets/Jpegs/opti1.jpg";
 import { FaDonate } from "react-icons/fa"
 import { NavLink } from "react-router-dom";
+import RevealOnScroll from "../../components/static/onScroll/RevealOnScroll";
 
 
 const Donate = () => {
   return (
     <div>
-    <Herro2>
+      <RevealOnScroll>
 
-      <Blackk2></Blackk2>
+        <Herro2>
 
-      <HerroHold2>
+          <Blackk2></Blackk2>
 
-        <Icon>
-            <FaDonate />
-        </Icon>
+          <HerroHold2>
 
-            <Support>
-                WE'RE HERE TO SUPPORT THEM
-            </Support>
+            <Icon>
+                <FaDonate />
+            </Icon>
 
-        <Create2>
-          <i>Fundraising for the  <span>People
-          </span> and Causes you Care About</i>
-        </Create2>
+                <Support>
+                    WE'RE HERE TO SUPPORT THEM
+                </Support>
 
-        <NavLink to="/donate" style={{textDecoration:"none"}}>
-            <Button2>Donate</Button2> 
-        </NavLink>
+            <Create2>
+              <i>Fundraising for the  <span>People
+              </span> and Causes you Care About</i>
+            </Create2>
 
-        {/* <Ital>Coming Soon!!!</Ital> */}
+            <NavLink to="/donate" style={{textDecoration:"none"}}>
+                <Button2>Donate</Button2> 
+            </NavLink>
 
-      </HerroHold2>
+            {/* <Ital>Coming Soon!!!</Ital> */}
 
-    </Herro2>
+          </HerroHold2>
+
+        </Herro2>
+
+      </RevealOnScroll>
 
     </div>
   )

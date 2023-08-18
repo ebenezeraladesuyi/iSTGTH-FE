@@ -2,11 +2,15 @@
 
 import styled from 'styled-components';
 import { AiFillLinkedin } from 'react-icons/ai';
-import brain1 from "../../assets/images/IMG-20230716-WA0032.jpg"
+import brain1 from "../../assets/images/IMG-20230716-WA0032.jpg";
+import RevealOnScroll from '../../components/static/onScroll/RevealOnScroll';
 
 
 const Brain = () => {
     return(
+        <>
+        <RevealOnScroll>
+
         <Brains>
 
             <BrainHold>
@@ -78,6 +82,9 @@ const Brain = () => {
             </BrainHold>
         
         </Brains>
+
+        </RevealOnScroll>
+        </>
     )
 }
 
@@ -101,7 +108,7 @@ padding-bottom: 30px;
 `;
 
 const BrainHold = styled.div`
-width:90%;
+width:80%;
 height:100%;
 display:flex;
 justify-content:center;

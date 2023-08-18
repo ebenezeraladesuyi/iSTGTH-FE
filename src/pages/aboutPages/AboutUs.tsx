@@ -7,6 +7,8 @@ import pic2 from "../../assets/images/IMG-20230716-WA0036.jpg";
 
 const AboutUs = () => {
     return(
+        <>
+
         <AboutHero>
 
             <AboutHold>
@@ -31,6 +33,8 @@ const AboutUs = () => {
             </AboutHold>
         
         </AboutHero>
+        
+        </>
     )
 }
 
@@ -46,7 +50,7 @@ border-radius: 10px;
 overflow: hidden;
 position : absolute;
 left: 20px;
-top: 120px;
+bottom: -130px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -62,7 +66,7 @@ border-radius: 10px;
 overflow: hidden;
 position : absolute;
 right: 30px;
-bottom: 30px;
+top: -30px;
 display: flex;
 justify-content: center;
 align-items: center;

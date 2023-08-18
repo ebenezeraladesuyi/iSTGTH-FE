@@ -5,11 +5,14 @@ import { AiOutlineProject } from "react-icons/ai"
 import { GiReceiveMoney } from "react-icons/gi"
 import { MdOutlineVolunteerActivism } from "react-icons/md"
 import { IoIosPeople } from "react-icons/io"
+import RevealOnScroll from "../../components/static/onScroll/RevealOnScroll";
+// import SlideInComponent from "../../components/static/onScroll/SlideIn";
 
 const Record = () => {
 
   return (
     <div>
+      <RevealOnScroll>
 
         <Rec>
 
@@ -59,6 +62,7 @@ const Record = () => {
 
         </Rec>
 
+      </RevealOnScroll>
     </div>
   )
 }
