@@ -120,6 +120,7 @@ const Ipsu = styled.div`
 font-size:30px;
 font-weight:600;
 color: rgba(214, 211, 211, 0.771);
+margin-top: 50px;
 
 @media screen and (max-width: 769px) {
     margin-top: 30px;
