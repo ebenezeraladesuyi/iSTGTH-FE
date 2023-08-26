@@ -77,7 +77,7 @@ align-items: center;
 
 const AboutHero = styled.div`
 width:100%;
-min-height:85vh;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -86,13 +86,13 @@ overflow:hidden;
 background: rgba(6, 6, 6, 0.771);
 padding-bottom: 30px;
 
-@media screen and (max-width: 768px) {
-    height:85vh;
-  };
+// @media screen and (max-width: 768px) {
+//     height:85vh;
+//   };
   
-  @media screen and (max-width: 425px) {
-    height:90vh;
-  };
+//   @media screen and (max-width: 425px) {
+//     height:90vh;
+//   };
   `;
 
 const AboutHold = styled.div`
@@ -120,18 +120,18 @@ flex-direction:column;
     };`;
 
 const Ipsu = styled.div`
-font-size:30px;
+font-size:27px;
 font-weight:600;
 color: rgba(214, 211, 211, 0.771);
 margin-top: 50px;
 
 @media screen and (max-width: 769px) {
-    margin-top: 50px;
+    // margin-top: 50px;
 };
 
 @media screen and (max-width: 425px) {
     font-size:20px;
-    margin-top: 50px;
+    // margin-top: 50px;
 };
 
 @media screen and (max-width: 320px) {
@@ -139,7 +139,7 @@ margin-top: 50px;
 };`;
 
 const Ipsu2 = styled.div`
-font-size:16px;
+font-size:15px;
 color: white;
 width:75%;
 text-align:justify;
