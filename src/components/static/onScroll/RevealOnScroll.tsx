@@ -41,7 +41,16 @@ const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
     <div ref={elementRef} className={`reveal-on-scroll ${className} ${isVisible ? 'visible' : ''}`}>
       {children}
     </div>
+    
   );
+
+  // return (
+  //   <div ref={elementRef} className={`reveal-on-scroll` ${className} ${isVisible ? 'visible' : ''}`}>
+  //     {children}
+  //   </div>
+  // )
+
+
 };
 
 export default RevealOnScroll;

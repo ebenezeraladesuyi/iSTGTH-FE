@@ -14,7 +14,11 @@ const AboutUs = () => {
             <AboutHold>
                 <AboutLeft>
                     <Ipsu>About Us</Ipsu>
-                    <Ipsu2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ante facilisi varius odio orci ut est pretium. Gravida massa viverra porta arcu. Nulla volutpat mauris tortor lacus, leo. Arcu tortor non tempor sollicitudin volutpat tristique ultricies. Magna nisl massa, magna amet, purus, etiam gravida mi. Aliquet iaculis suspendisse condimentum non lectus enim, pharetra est, elementum. Cursus lacus morbi sem orci pellentesque. In auctor sed diam, vel adipiscing sit lacus aenean adipiscing. In augue amet, urna, turpis feugiat ultricies. Velit suspendisse quis id adipiscing. Lorem lectus vulputate ut aliquam amet purus. Ornare </Ipsu2>
+                    <Ipsu2>
+                        MISSION : To restore 'HOPE' among vulnerable children, widows and communities that have been affected by poverty, abuse, violence, disease and other natural calamities. <br/><br/><br/>
+                        VISION : Communities where children and their caregivers are empowered to impprove their own livelihood through appropriate and affordable alternatives. <br/><br/><br/>
+                        VISION : Communities where children and their caregivers are empowered to impprove their own livelihood through appropriate and affordable alternatives.     
+                    </Ipsu2>
                 </AboutLeft>
 
                 <AboutRight>

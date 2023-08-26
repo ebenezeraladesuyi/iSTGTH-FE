@@ -226,10 +226,10 @@ align-items: center;
 // background-image: linear-gradient(100deg, #000000 15%, #1c15e7);
 // background-color: #1c15e7;
 
-// @media screen and (max-width: 768px) {
-//   padding-top: 30px;
-//   padding-bottom: 30px;
-// }
+@media screen and (max-width: 768px) {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 
 // @media screen and (max-width: 500px) {
 //   height: 70vh

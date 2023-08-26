@@ -24,7 +24,7 @@ const Involved = () => {
                 </InvLeft>
                 
                 <InvRight>
-                    <Stand>iStandToGiveToHumanity</Stand>
+                    <Stand>iStandToGiveAndCareFoundation</Stand>
 
                     <Goal>
                         Our Goal is to be that Helping Hand

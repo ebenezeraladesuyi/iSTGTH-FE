@@ -2,7 +2,8 @@
 
 import styled from 'styled-components';
 import { AiFillLinkedin } from 'react-icons/ai';
-import brain1 from "../../assets/images/IMG-20230716-WA0032.jpg";
+// import brain1 from "../../assets/images/IMG-20230716-WA0032.jpg";
+import avatar from "../../assets/Jpegs/avatar.jpg"
 import RevealOnScroll from '../../components/static/onScroll/RevealOnScroll';
 
 
@@ -24,7 +25,7 @@ const Brain = () => {
             <BrainDown>
 
             <BrainBox>
-                <BrainImg src={brain1} alt="tobi" />
+                <BrainImg src={avatar} alt="tobi" />
                 <Ada>Hussien Oluwatobi</Ada>
                 <Manager>Convener</Manager>
                 <Icon>
@@ -33,8 +34,8 @@ const Brain = () => {
             </BrainBox>
 
             <BrainBox>
-            <BrainImg src={brain1} alt="tobi" />
-            <Ada>Oluwatobi</Ada>
+            <BrainImg src={avatar} alt="tobi" />
+            <Ada>iSTGACF</Ada>
             <Manager>Secretary</Manager>
             <Icon>
                 <AiFillLinkedin />
@@ -42,8 +43,8 @@ const Brain = () => {
             </BrainBox>
 
             <BrainBox>
-            <BrainImg src={brain1} alt="tobi"  />
-            <Ada>Mark</Ada>
+            <BrainImg src={avatar} alt="tobi"  />
+            <Ada>iSTGACF</Ada>
             <Manager>Project Coordinator</Manager>
             <Icon>
                 <AiFillLinkedin />
@@ -51,8 +52,8 @@ const Brain = () => {
             </BrainBox>
 
             <BrainBox>
-            <BrainImg src={brain1} alt="tobi" />
-            <Ada>Ohiz</Ada>
+            <BrainImg src={avatar} alt="tobi" />
+            <Ada>iSTGACF</Ada>
             <Manager>Editorial Lead</Manager>
             <Icon>
                 <AiFillLinkedin />
@@ -60,8 +61,8 @@ const Brain = () => {
             </BrainBox>
 
             <BrainBox>
-            <BrainImg src={brain1} alt="tobi"  />
-            <Ada>Tsmaliz</Ada>
+            <BrainImg src={avatar} alt="tobi"  />
+            <Ada>iSTGACF</Ada>
             <Manager>Visual Designer</Manager>
             <Icon>
                 <AiFillLinkedin />
@@ -69,8 +70,8 @@ const Brain = () => {
             </BrainBox>
 
             <BrainBox>
-            <BrainImg src={brain1} alt="tobi"  />
-            <Ada>Habeeb</Ada>
+            <BrainImg src={avatar} alt="tobi"  />
+            <Ada>iSTGACF</Ada>
             <Manager>Brand Manager</Manager>
             <Icon>
                 <AiFillLinkedin />
@@ -193,9 +194,12 @@ margin-top: 15px;
 `;
 
 const BrainImg = styled.img`
-width:80%;
+width:85%;
 height:80%;
-border-radius:5px;
+// border-radius:5px;
+border-radius:50%;
+border: 1px solid gray;
+box-shadow: 0 0 3px gray;
 
 // @media screen and (max-width: 768px) {
 //     width:80%;
