@@ -24,59 +24,59 @@ const Brain = () => {
 
             <BrainDown>
 
-            <BrainBox>
+                <BrainBox>
+                    <BrainImg src={avatar} alt="tobi" />
+                    <Ada>Hussien Oluwatobi</Ada>
+                    <Manager>Convener</Manager>
+                    <Icon>
+                        <AiFillLinkedin />
+                    </Icon>
+                </BrainBox>
+
+                <BrainBox>
                 <BrainImg src={avatar} alt="tobi" />
-                <Ada>Hussien Oluwatobi</Ada>
-                <Manager>Convener</Manager>
+                <Ada>iSTGACF</Ada>
+                <Manager>Secretary</Manager>
                 <Icon>
                     <AiFillLinkedin />
                 </Icon>
-            </BrainBox>
+                </BrainBox>
 
-            <BrainBox>
-            <BrainImg src={avatar} alt="tobi" />
-            <Ada>iSTGACF</Ada>
-            <Manager>Secretary</Manager>
-            <Icon>
-                <AiFillLinkedin />
-            </Icon>
-            </BrainBox>
+                <BrainBox>
+                <BrainImg src={avatar} alt="tobi"  />
+                <Ada>iSTGACF</Ada>
+                <Manager>Project Coordinator</Manager>
+                <Icon>
+                    <AiFillLinkedin />
+                </Icon>
+                </BrainBox>
 
-            <BrainBox>
-            <BrainImg src={avatar} alt="tobi"  />
-            <Ada>iSTGACF</Ada>
-            <Manager>Project Coordinator</Manager>
-            <Icon>
-                <AiFillLinkedin />
-            </Icon>
-            </BrainBox>
+                <BrainBox>
+                <BrainImg src={avatar} alt="tobi" />
+                <Ada>iSTGACF</Ada>
+                <Manager>Editorial Lead</Manager>
+                <Icon>
+                    <AiFillLinkedin />
+                </Icon>
+                </BrainBox>
 
-            <BrainBox>
-            <BrainImg src={avatar} alt="tobi" />
-            <Ada>iSTGACF</Ada>
-            <Manager>Editorial Lead</Manager>
-            <Icon>
-                <AiFillLinkedin />
-            </Icon>
-            </BrainBox>
+                <BrainBox>
+                <BrainImg src={avatar} alt="tobi"  />
+                <Ada>iSTGACF</Ada>
+                <Manager>Visual Designer</Manager>
+                <Icon>
+                    <AiFillLinkedin />
+                </Icon>
+                </BrainBox>
 
-            <BrainBox>
-            <BrainImg src={avatar} alt="tobi"  />
-            <Ada>iSTGACF</Ada>
-            <Manager>Visual Designer</Manager>
-            <Icon>
-                <AiFillLinkedin />
-            </Icon>
-            </BrainBox>
-
-            <BrainBox>
-            <BrainImg src={avatar} alt="tobi"  />
-            <Ada>iSTGACF</Ada>
-            <Manager>Brand Manager</Manager>
-            <Icon>
-                <AiFillLinkedin />
-            </Icon>
-            </BrainBox>
+                <BrainBox>
+                <BrainImg src={avatar} alt="tobi"  />
+                <Ada>iSTGACF</Ada>
+                <Manager>Public Media Personnel</Manager>
+                <Icon>
+                    <AiFillLinkedin />
+                </Icon>
+                </BrainBox>
 
             </BrainDown>               
 
